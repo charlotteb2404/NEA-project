@@ -40,6 +40,12 @@ namespace NEA_Project
                 Exit();
 
             // TODO: Add your update logic here
+            var kstate = Keyboard.GetState();
+            if(kstate.IsKeyDown(Keys.Up))
+            { 
+                position.Y = position.Y - 300f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            }
 
             base.Update(gameTime);
         }
