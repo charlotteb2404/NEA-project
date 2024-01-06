@@ -8,6 +8,8 @@ namespace NEA_Project
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        Texture2D ball;
+        Vector2 position;
 
         public Game1()
         {
@@ -19,6 +21,7 @@ namespace NEA_Project
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
 
             base.Initialize();
         }
@@ -26,6 +29,7 @@ namespace NEA_Project
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+            ball = Content.Load<Texture2D>("ball");
 
             // TODO: use this.Content to load your game content here
         }
@@ -45,6 +49,9 @@ namespace NEA_Project
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            _spriteBatch.Begin();
+            _spriteBatch.Draw(ball, position, null, Color.White);
+            _spriteBatch.End();
 
             base.Draw(gameTime);
         }
