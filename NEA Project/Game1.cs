@@ -46,7 +46,18 @@ namespace NEA_Project
                 position.Y = position.Y - 300f * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
             }
-
+            if(kstate.IsKeyDown(Keys.Left))
+            {
+                position.X = position.X - 300f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
+            if(kstate.IsKeyDown(Keys.Down))
+            {
+                position.Y = position.Y + 300f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
+            if(kstate.IsKeyDown(Keys.Right))
+            {
+                position.X = position.X + 300f * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            }
             base.Update(gameTime);
         }
 
