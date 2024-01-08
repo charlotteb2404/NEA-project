@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using NEA_Project.Core;
 
 namespace NEA_Project
 {
@@ -16,7 +17,9 @@ namespace NEA_Project
         Vector2 batposition;
         float speed = 300f;
         Texture2D crash;
-
+        Texture2D ballreset;
+        Sprite sprite;
+        int health = 5;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -43,6 +46,8 @@ namespace NEA_Project
             map = Content.Load<Texture2D>("map");
             bat = Content.Load<Texture2D>("ball");
             crash = Content.Load<Texture2D>("crash");
+            ballreset = Content.Load<Texture2D>("ball");
+            sprite = new Sprite(ball, crash);
 
 
             // TODO: use this.Content to load your game content here
@@ -55,7 +60,7 @@ namespace NEA_Project
 
             // TODO: Add your update logic here
             var kstate = Keyboard.GetState();
-            if(kstate.IsKeyDown(Keys.Up))
+            if(kstate.IsKeyDown(Keys.Up)) //moving in directions
             { 
                 position.Y = position.Y - speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -72,11 +77,29 @@ namespace NEA_Project
             {
                 position.X = position.X + speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
             }
-            if (position.Y <= 100 && position.X <= 100)
+            if(health == 0)
             {
                 speed = 0f;
                 ball = crash;
             }
+
+            if((position.Y - ball.Height/2f< batposition.Y + bat.Height/2f)
+                && (position.Y + ball.Height/2f > batposition.Y - bat.Height/2f)
+                && (position.X - ball.Width/2f < batposition.X + bat.Width/2f)
+                &&(position.X + ball.Width/2f > batposition.X - bat.Width/2f))
+            {
+                speed = 0f;
+                ball = crash;
+                health = health --;
+            }
+            if (kstate.IsKeyDown(Keys.Space))
+            {
+                speed = 300f;
+                position.X = _graphics.PreferredBackBufferWidth / 2;
+                position.Y = _graphics.PreferredBackBufferHeight / 2;
+                ball = ballreset;
+            }
+            sprite.Rotation = 10;
             base.Update(gameTime);
         }
 
@@ -89,6 +112,7 @@ namespace NEA_Project
             _spriteBatch.Draw(map, mapposition, null, Color.White);
             _spriteBatch.Draw(ball, position, null, Color.White);
             _spriteBatch.Draw(bat, batposition, null, Color.White);
+            sprite.Draw(_spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);
