@@ -19,7 +19,7 @@ namespace NEA_Project
         Texture2D crash;
         Texture2D ballreset;
         Sprite sprite;
-        int health = 5;
+        int health = 6;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -90,16 +90,25 @@ namespace NEA_Project
             {
                 speed = 0f;
                 ball = crash;
-                health = health --;
+               
+
             }
-            if (kstate.IsKeyDown(Keys.Space))
+            if (kstate.IsKeyDown(Keys.Space)&& health > 0)
             {
                 speed = 300f;
                 position.X = _graphics.PreferredBackBufferWidth / 2;
                 position.Y = _graphics.PreferredBackBufferHeight / 2;
                 ball = ballreset;
+                //health = health - 1;
+                
             }
-            sprite.Rotation = 10;
+            sprite.Update(gameTime);
+            //if (kstate.IsKeyDown(Keys.X))
+            //{
+            //    sprite.Rotation += 10;
+            //}
+            sprite.DetectCollision(ball, position);
+
             base.Update(gameTime);
         }
 
