@@ -58,16 +58,16 @@ namespace NEA_Project.Core
                 Rotation += 0.05f;
             //}
         }
-        public virtual void DetectCollision(Texture2D ball, Vector2 position)
+        public virtual void DetectCollision(Texture2D ball, Vector2 position, float speed)
         {
-            if ((position.Y - ball.Height / 2f < Position.Y + _texture.Height / 2f)
+            if ((position.Y - ball.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
                && (position.Y + ball.Height / 2f > Position.Y - _texture.Height / 2f)
                && (position.X - ball.Width / 2f < Position.X + _texture.Width / 2f)
                && (position.X + ball.Width / 2f > Position.X - _texture.Width / 2f))
             {
                 Speed = 0f;
                 _texture = crash;
-               
+            
 
             }
             if(_texture == crash)

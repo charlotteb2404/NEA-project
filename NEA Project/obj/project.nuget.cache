@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "R9Vsx4h2bBUIXjFFuEvi9fo5JtCB/ocwg5N7Pk89L/aUVfiLezHxnmMzZgh71Nv8PGUQz4oedifLNQq913nl+w==",
+  "dgSpecHash": "DBUS/eT4+9MWqJk8fdKK5GTg8Y+OhdMNEWa+zH9+yDYVl+GFpteS36eN9hvofTMPY3B+yWhJsBLvP1H9WM4Glw==",
   "success": true,
   "projectFilePath": "C:\\Users\\S220025\\OneDrive - Altus Education Partnership\\Subjects\\Computer Science\\NEA\\code\\Games\\NEA-project\\NEA Project\\NEA Project.csproj",
   "expectedPackageFiles": [
@@ -124,7 +124,11 @@
     "C:\\Users\\S220025\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\S220025\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\S220025\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\S220025\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\S220025\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\S220025\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\S220025\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\S220025\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\S220025\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
   ],
   "logs": []
 }

@@ -107,7 +107,7 @@ namespace NEA_Project
             //{
             //    sprite.Rotation += 10;
             //}
-            sprite.DetectCollision(ball, position);
+            sprite.DetectCollision(ball, position, speed);
 
             base.Update(gameTime);
         }
