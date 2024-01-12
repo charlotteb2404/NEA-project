@@ -10,17 +10,22 @@ namespace NEA_Project.Core
 {
     public class Score
     {
-        protected Texture2D _score;
+        protected int _score;
         protected Vector2 _position;
+        protected SpriteFont _font;
 
-        public Score(Texture2D score)
+        public Score(SpriteFont font)
         {
-            _score = score;
-            _position = new Vector2(950, 100);
+            _font = font;
+            _position = new Vector2(10, 10);
         }
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_score, _position, null, Color.White);
+            spriteBatch.DrawString(_font, $"score = {_score}", _position, Color.White);
+        }
+        public virtual void SetScore(int score) 
+        {
+            _score = score;
         }
     }
 }

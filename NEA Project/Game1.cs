@@ -20,6 +20,10 @@ namespace NEA_Project
         Texture2D ballreset;
         Sprite sprite;
         int health = 6;
+        int _score = 0;
+        Score score;
+        int _bank = 0;
+        Bank bank;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -36,6 +40,7 @@ namespace NEA_Project
             position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
             mapposition = new Vector2(0, 0);
             batposition = new Vector2(100, 100);
+            
             base.Initialize();
         }
 
@@ -48,6 +53,7 @@ namespace NEA_Project
             crash = Content.Load<Texture2D>("crash");
             ballreset = Content.Load<Texture2D>("ball");
             sprite = new Sprite(ball, crash);
+            score = new Score(Content.Load<SpriteFont>("font"));
 
 
             // TODO: use this.Content to load your game content here
@@ -81,6 +87,7 @@ namespace NEA_Project
             {
                 speed = 0f;
                 ball = crash;
+
             }
 
             if((position.Y - ball.Height/2f< batposition.Y + bat.Height/2f)
@@ -90,7 +97,8 @@ namespace NEA_Project
             {
                 speed = 0f;
                 ball = crash;
-               
+                _score = 0;
+
 
             }
             if (kstate.IsKeyDown(Keys.Space)&& health > 0)
@@ -102,6 +110,19 @@ namespace NEA_Project
                 //health = health - 1;
                 
             }
+            score.SetScore(_score);
+            _score = (int)gameTime.TotalGameTime.TotalSeconds;
+            
+            if (kstate.IsKeyDown(Keys.B))
+            {
+                _bank = _bank + _score; //stores score in bank if B is pressed then restarts the count, need to make it start going up from 0 not just show that it does
+                _score = 0;
+
+                
+            }
+
+
+
             sprite.Update(gameTime);
             //if (kstate.IsKeyDown(Keys.X))
             //{
@@ -119,9 +140,15 @@ namespace NEA_Project
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             _spriteBatch.Draw(map, mapposition, null, Color.White);
+            //foreach(var sprite in sprites)
+            //{
+            //    sprite.Draw(_spriteBatch);
+            //}
+            //player.Draw(_spriteBatch);
             _spriteBatch.Draw(ball, position, null, Color.White);
             _spriteBatch.Draw(bat, batposition, null, Color.White);
             sprite.Draw(_spriteBatch);
+            score.Draw(_spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);
