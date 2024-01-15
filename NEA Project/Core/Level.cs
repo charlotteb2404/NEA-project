@@ -31,6 +31,7 @@ namespace NEA_Project.Core
             }
             _position = new Vector2(0, 0);
         }
+
         
         public virtual void SetLevel (int levelNumber)
         {

@@ -11,13 +11,15 @@ namespace NEA_Project
         private SpriteBatch _spriteBatch;
         Texture2D playercar;
         Vector2 position;
-        Texture2D map;
-        Vector2 mapposition;
+        //Texture2D map;
+        //Vector2 mapposition;
         Texture2D bat;
         Vector2 batposition;
         float speed = 300f;
         Texture2D crash;
         Texture2D playercarreset;
+        Texture2D policecar;
+        Level level;
         Sprite sprite;
         int health = 6;
         int _score = 0;
@@ -38,7 +40,7 @@ namespace NEA_Project
         {
             // TODO: Add your initialization logic here
             position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
-            mapposition = new Vector2(0, 0);
+           // mapposition = new Vector2(0, 0);
             batposition = new Vector2(100, 100);
             
             base.Initialize();
@@ -48,12 +50,14 @@ namespace NEA_Project
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             playercar = Content.Load<Texture2D>("playercar");
-            map = Content.Load<Texture2D>("map");
-            bat = Content.Load<Texture2D>("ball");
+            //map = Content.Load<Texture2D>("map");
+            bat = Content.Load<Texture2D>("policecar");
             crash = Content.Load<Texture2D>("crash");
             playercar = Content.Load<Texture2D>("playercar");
+            policecar = Content.Load<Texture2D>("policecar");
             sprite = new Sprite(playercar, crash);
             score = new Score(Content.Load<SpriteFont>("font"));
+            level =new Level(Content.Load<Texture2D>("map"));
 
 
             // TODO: use this.Content to load your game content here
@@ -139,7 +143,7 @@ namespace NEA_Project
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(map, mapposition, null, Color.White);
+            //_spriteBatch.Draw(map, mapposition, null, Color.White);
             //foreach(var sprite in sprites)
             //{
             //    sprite.Draw(_spriteBatch);
