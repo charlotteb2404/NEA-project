@@ -9,7 +9,7 @@ namespace NEA_Project
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        Texture2D ball;
+        Texture2D playercar;
         Vector2 position;
         Texture2D map;
         Vector2 mapposition;
@@ -17,7 +17,7 @@ namespace NEA_Project
         Vector2 batposition;
         float speed = 300f;
         Texture2D crash;
-        Texture2D ballreset;
+        Texture2D playercarreset;
         Sprite sprite;
         int health = 6;
         int _score = 0;
@@ -47,12 +47,12 @@ namespace NEA_Project
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            ball = Content.Load<Texture2D>("ball");
+            playercar = Content.Load<Texture2D>("playercar");
             map = Content.Load<Texture2D>("map");
             bat = Content.Load<Texture2D>("ball");
             crash = Content.Load<Texture2D>("crash");
-            ballreset = Content.Load<Texture2D>("ball");
-            sprite = new Sprite(ball, crash);
+            playercar = Content.Load<Texture2D>("playercar");
+            sprite = new Sprite(playercar, crash);
             score = new Score(Content.Load<SpriteFont>("font"));
 
 
@@ -86,17 +86,17 @@ namespace NEA_Project
             if(health == 0)
             {
                 speed = 0f;
-                ball = crash;
+                playercar = crash;  
 
             }
 
-            if((position.Y - ball.Height/2f< batposition.Y + bat.Height/2f)
-                && (position.Y + ball.Height/2f > batposition.Y - bat.Height/2f)
-                && (position.X - ball.Width/2f < batposition.X + bat.Width/2f)
-                &&(position.X + ball.Width/2f > batposition.X - bat.Width/2f))
+            if((position.Y - playercar.Height/2f< batposition.Y + bat.Height/2f)
+                && (position.Y + playercar.Height/2f > batposition.Y - bat.Height/2f)
+                && (position.X - playercar.Width/2f < batposition.X + bat.Width/2f)
+                &&(position.X + playercar.Width/2f > batposition.X - bat.Width/2f))
             {
                 speed = 0f;
-                ball = crash;
+                playercar = crash;
                 _score = 0;
 
 
@@ -106,7 +106,7 @@ namespace NEA_Project
                 speed = 300f;
                 position.X = _graphics.PreferredBackBufferWidth / 2;
                 position.Y = _graphics.PreferredBackBufferHeight / 2;
-                ball = ballreset;
+                playercar = playercarreset;
                 //health = health - 1;
                 
             }
@@ -128,7 +128,7 @@ namespace NEA_Project
             //{
             //    sprite.Rotation += 10;
             //}
-            sprite.DetectCollision(ball, position, speed);
+            sprite.DetectCollision(playercar, position, speed);
 
             base.Update(gameTime);
         }
@@ -145,7 +145,7 @@ namespace NEA_Project
             //    sprite.Draw(_spriteBatch);
             //}
             //player.Draw(_spriteBatch);
-            _spriteBatch.Draw(ball, position, null, Color.White);
+            _spriteBatch.Draw(playercar, position, null, Color.White);
             _spriteBatch.Draw(bat, batposition, null, Color.White);
             sprite.Draw(_spriteBatch);
             score.Draw(_spriteBatch);

@@ -14,7 +14,7 @@ namespace NEA_Project.Core
     {
         protected Texture2D _texture;
         protected Texture2D crash;
-        protected Texture2D ball;
+        protected Texture2D playercar;
         public Vector2 Position;
         public float Speed = 50f;
         public float Rotation;
@@ -30,13 +30,13 @@ namespace NEA_Project.Core
         public Sprite(Texture2D texture)
         {
             _texture = texture;
-            ball = texture;
+            playercar = texture;
         }
 
         public Sprite(Texture2D texture, Texture2D crashtexture)
         {
             _texture = texture;
-            ball = texture;
+            playercar = texture;
             crash = crashtexture;
             Position = new Vector2(300, 300);
         }
@@ -58,12 +58,12 @@ namespace NEA_Project.Core
                 Rotation += 0.05f;
             //}
         }
-        public virtual void DetectCollision(Texture2D ball, Vector2 position, float speed)
+        public virtual void DetectCollision(Texture2D playercar, Vector2 position, float speed)
         {
-            if ((position.Y - ball.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
-               && (position.Y + ball.Height / 2f > Position.Y - _texture.Height / 2f)
-               && (position.X - ball.Width / 2f < Position.X + _texture.Width / 2f)
-               && (position.X + ball.Width / 2f > Position.X - _texture.Width / 2f))
+            if ((position.Y - playercar.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
+               && (position.Y + playercar.Height / 2f > Position.Y - _texture.Height / 2f)
+               && (position.X - playercar.Width / 2f < Position.X + _texture.Width / 2f)
+               && (position.X + playercar.Width / 2f > Position.X - _texture.Width / 2f))
             {
                 Speed = 0f;
                 _texture = crash;

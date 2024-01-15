@@ -1,0 +1,108 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{FE5E856D-7A2F-41C0-A7DD-46629B7D56FD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>NEA_Project3</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".config\dotnet-tools.json" />
+    <None Include=".vs\NEA Project\DesignTimeBuild\.dtbcache.v2" />
+    <None Include=".vs\NEA Project\FileContentIndex\34cd5407-396d-4018-990e-e5f72984cdc7.vsidx" />
+    <None Include=".vs\NEA Project\FileContentIndex\read.lock" />
+    <None Include=".vs\NEA Project\v17\.futdcache.v2" />
+    <None Include=".vs\NEA Project\v17\.suo" />
+    <None Include=".vs\ProjectEvaluation\nea project.metadata.v5.2" />
+    <None Include=".vs\ProjectEvaluation\nea project.metadata.v7.bin" />
+    <None Include=".vs\ProjectEvaluation\nea project.projects.v5.2" />
+    <None Include=".vs\ProjectEvaluation\nea project.projects.v7.bin" />
+    <None Include="app.manifest" />
+    <None Include="Content\bin\Windows\ball.xnb" />
+    <None Include="Content\bin\Windows\Content\ball.xnb" />
+    <None Include="Content\bin\Windows\Content\crash.xnb" />
+    <None Include="Content\bin\Windows\Content\font.xnb" />
+    <None Include="Content\bin\Windows\Content\map.xnb" />
+    <None Include="Content\bin\Windows\Content\ScoreList.xnb" />
+    <None Include="Content\bin\Windows\crash.xnb" />
+    <None Include="Content\bin\Windows\font.xnb" />
+    <None Include="Content\bin\Windows\map.xnb" />
+    <None Include="Content\bin\Windows\ScoreList.xnb" />
+    <None Include="Content\Content.mgcb" />
+    <None Include="Content\font.spritefont" />
+    <None Include="Content\obj\Windows\.mgcontent" />
+    <None Include="Content\obj\Windows\.mgstats" />
+    <None Include="Content\obj\Windows\ball.mgcontent" />
+    <None Include="Content\obj\Windows\crash.mgcontent" />
+    <None Include="Content\obj\Windows\font.mgcontent" />
+    <None Include="Content\obj\Windows\map.mgcontent" />
+    <None Include="Content\obj\Windows\net6.0-windows\Content\.mgcontent" />
+    <None Include="Content\obj\Windows\net6.0-windows\Content\.mgstats" />
+    <None Include="Content\obj\Windows\net6.0-windows\Content\ball.mgcontent" />
+    <None Include="Content\obj\Windows\net6.0-windows\Content\crash.mgcontent" />
+    <None Include="Content\obj\Windows\net6.0-windows\Content\font.mgcontent" />
+    <None Include="Content\obj\Windows\net6.0-windows\Content\map.mgcontent" />
+    <None Include="Content\obj\Windows\net6.0-windows\Content\ScoreList.mgcontent" />
+    <None Include="Content\obj\Windows\ScoreList.mgcontent" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Bank.cs" />
+    <Compile Include="Core\Level.cs" />
+    <Compile Include="Core\Score.cs" />
+    <Compile Include="Core\Sprite.cs" />
+    <Compile Include="Core\Stopwatch.cs" />
+    <Compile Include="Game1.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Sprites\Player.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ball.png" />
+    <Content Include="Content\crash.png" />
+    <Content Include="Content\map.png" />
+    <Content Include="Content\ScoreList.png" />
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include=".vs\NEA Project\FileContentIndex\merges\" />
+    <Folder Include=".vs\NEA Project\v16\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
+</Project>

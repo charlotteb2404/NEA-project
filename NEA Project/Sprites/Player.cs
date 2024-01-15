@@ -15,7 +15,7 @@ namespace NEA_Project.Sprites
         public Player(Texture2D texture,Texture2D crashtexture, Vector2 startPosition) : base(texture, crashtexture)
         {
             this.Speed = 200f;
-            this._startPosition = startPosition;
+           // this._startPosition = startPosition;
         }
 
         public override void Update(GameTime gameTime)
@@ -51,8 +51,8 @@ namespace NEA_Project.Sprites
                     Rotation = 0f;
                     RotationAngle = 0.05f;
                     Speed = 200f;
-                    _texture = _nonCrashed;
-                    Position = _startPosition;
+                    //_texture = _nonCrashed;
+                    //Position = _startPosition;
                 }
             }
 
