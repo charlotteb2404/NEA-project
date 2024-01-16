@@ -7,17 +7,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Content;
+using System.Reflection.Metadata;
 
 namespace NEA_Project.Sprites
 {
     public class Player : Sprite
     {
-        public Player(Texture2D texture,Texture2D crashtexture, Vector2 startPosition) : base(texture, crashtexture)
+        //public Player(Texture2D texture,Texture2D crashtexture, Vector2 startPosition) : base(texture, crashtexture)
+        //{
+        //    this.Speed = 200f;
+        //    this._startPosition = startPosition;
+        //}
+        public Player(ContentManager content, GraphicsDeviceManager graphics): base(content, graphics) 
         {
-            this.Speed = 200f;
-           // this._startPosition = startPosition;
+            Position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
+            _startPosition = Position;
+            Speed = 200f;
+            RotationAngle = 0.05f;
         }
 
+        public override void LoadContent()
+        {
+            _texture = _content.Load<Texture2D>("playercar");
+            noncrash = _content.Load<Texture2D>("playercar");
+            crash = _content.Load<Texture2D>("crash");
+        }
         public override void Update(GameTime gameTime)
         {
             var kstate = Keyboard.GetState();
@@ -51,8 +66,8 @@ namespace NEA_Project.Sprites
                     Rotation = 0f;
                     RotationAngle = 0.05f;
                     Speed = 200f;
-                    //_texture = _nonCrashed;
-                    //Position = _startPosition;
+                    _texture = noncrash;
+                    Position = _startPosition;
                 }
             }
 

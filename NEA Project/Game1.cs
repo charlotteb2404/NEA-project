@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using NEA_Project.Core;
+using NEA_Project.Sprites;
 using System.Collections.Generic;
 
 namespace NEA_Project
@@ -10,18 +11,13 @@ namespace NEA_Project
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-        Texture2D playercar;
-        Vector2 position;
+        Player playercar;
         //Texture2D map;
         //Vector2 mapposition;
-        Texture2D bat;
-        Vector2 batposition;
+        Policecar bat;
         float speed = 300f;
-        Texture2D crash;
-        Texture2D playercarreset;
-        Texture2D policecar;
+        Policecar policecar;
         Level level;
-        Sprite sprite;
         int health = 6;
         int _score = 0;
         Score score;
@@ -41,23 +37,20 @@ namespace NEA_Project
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
-           // mapposition = new Vector2(0, 0);
-            batposition = new Vector2(100, 100);
-            
+            playercar = new Player(Content, _graphics);
+            policecar = new Policecar(Content, _graphics);
+            bat = new Policecar(Content, _graphics);
+
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            playercar = Content.Load<Texture2D>("playercar");
+            playercar.LoadContent();
             //map = Content.Load<Texture2D>("map");
-            bat = Content.Load<Texture2D>("policecar");
-            crash = Content.Load<Texture2D>("crash");
-            playercarreset = Content.Load<Texture2D>("playercar");
-            policecar = Content.Load<Texture2D>("policecar");
-            sprite = new Sprite(playercar, crash);
+            bat.LoadContent();
+            policecar.LoadContent();
             score = new Score(Content.Load<SpriteFont>("font"));
             banktotal = new Bank(0);
 
@@ -78,61 +71,61 @@ namespace NEA_Project
 
             // TODO: Add your update logic here
             var kstate = Keyboard.GetState();
-            if (kstate.IsKeyDown(Keys.L))// level change
-            {
-                if (level.LevelNumber == 1)
-                {
-                    level.SetLevel(2);
-                }
-                else
-                {
-                    level.SetLevel(1);
-                }
-            }
-            if(kstate.IsKeyDown(Keys.Up)) //moving in directions
-            { 
-                position.Y = position.Y - speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //if (kstate.IsKeyDown(Keys.L))// level change
+            //{
+            //    if (level.LevelNumber == 1)
+            //    {
+            //        level.SetLevel(2);
+            //    }
+            //    else
+            //    {
+            //        level.SetLevel(1);
+            //    }
+            //}
+            //if(kstate.IsKeyDown(Keys.Up)) //moving in directions
+            //{ 
+            //    position.Y = position.Y - speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            }
-            if(kstate.IsKeyDown(Keys.Left))
-            {
-                position.X = position.X - speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            }
-            if(kstate.IsKeyDown(Keys.Down))
-            {
-                position.Y = position.Y + speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            }
-            if(kstate.IsKeyDown(Keys.Right))
-            {
-                position.X = position.X + speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            }
-            if(health == 0)
-            {
-                speed = 0f;
-                playercar = crash;  
+            //}
+            //if(kstate.IsKeyDown(Keys.Left))
+            //{
+            //    position.X = position.X - speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //}
+            //if(kstate.IsKeyDown(Keys.Down))
+            //{
+            //    position.Y = position.Y + speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //}
+            //if(kstate.IsKeyDown(Keys.Right))
+            //{
+            //    position.X = position.X + speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //}
+            //if(health == 0)
+            //{
+            //    speed = 0f;
+            //    playercar = crash;  
 
-            }
+            //}
 
-            if((position.Y - playercar.Height/2f< batposition.Y + bat.Height/2f)
-                && (position.Y + playercar.Height/2f > batposition.Y - bat.Height/2f)
-                && (position.X - playercar.Width/2f < batposition.X + bat.Width/2f)
-                &&(position.X + playercar.Width/2f > batposition.X - bat.Width/2f))
-            {
-                speed = 0f;
-                playercar = crash;
-                _score = 0;
+            //if((position.Y - playercar.Height/2f< batposition.Y + bat.Height/2f)
+            //    && (position.Y + playercar.Height/2f > batposition.Y - bat.Height/2f)
+            //    && (position.X - playercar.Width/2f < batposition.X + bat.Width/2f)
+            //    &&(position.X + playercar.Width/2f > batposition.X - bat.Width/2f))
+            //{
+            //    speed = 0f;
+            //    playercar = crash;
+            //    _score = 0;
 
 
-            }
-            if (kstate.IsKeyDown(Keys.Space)&& health > 0)
-            {
-                speed = 300f;
-                position.X = _graphics.PreferredBackBufferWidth / 2;
-                position.Y = _graphics.PreferredBackBufferHeight / 2;
-                playercar = playercarreset;
-                //health = health - 1;
+            //}
+            //if (kstate.IsKeyDown(Keys.Space)&& health > 0)
+            //{
+            //    speed = 300f;
+            //    position.X = _graphics.PreferredBackBufferWidth / 2;
+            //    position.Y = _graphics.PreferredBackBufferHeight / 2;
+            //    playercar = playercarreset;
+            //    //health = health - 1;
                 
-            }
+            //}
             score.SetScore(_score);
             _score = (int)gameTime.TotalGameTime.TotalSeconds;
             
@@ -146,12 +139,16 @@ namespace NEA_Project
 
 
 
-            sprite.Update(gameTime);
+            playercar.Update(gameTime);
+            policecar.Update(gameTime);
+            bat.Update(gameTime);
             //if (kstate.IsKeyDown(Keys.X))
             //{
             //    sprite.Rotation += 10;
             //}
-            sprite.DetectCollision(playercar, position, speed);
+            //sprite.DetectCollision(playercar, position, speed);
+            playercar.DetectCollision(policecar);
+            playercar.DetectCollision(bat);
 
             base.Update(gameTime);
         }
@@ -169,9 +166,9 @@ namespace NEA_Project
             //}
             //player.Draw(_spriteBatch);
             level.Draw(_spriteBatch);
-            _spriteBatch.Draw(playercar, position, null, Color.White);
-            _spriteBatch.Draw(bat, batposition, null, Color.White);
-            sprite.Draw(_spriteBatch);
+            policecar.Draw(_spriteBatch);
+            bat.Draw(_spriteBatch);
+            playercar.Draw(_spriteBatch);
             score.Draw(_spriteBatch);
             _spriteBatch.End();
 

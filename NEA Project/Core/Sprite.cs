@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SharpDX.Direct3D9;
@@ -13,32 +14,32 @@ namespace NEA_Project.Core
     public class Sprite
     {
         protected Texture2D _texture;
+        protected Texture2D noncrash;
         protected Texture2D crash;
         protected Texture2D playercar;
         public Vector2 Position;
         public float Speed = 50f;
         public float Rotation;
         public float RotationAngle;
-
-
+        protected Vector2 _startPosition;
+        protected ContentManager _content;
+        protected GraphicsDeviceManager _graphics;
         public Sprite()
         {
 
         }
 
 
-        public Sprite(Texture2D texture)
-        {
-            _texture = texture;
-            playercar = texture;
-        }
+        
 
-        public Sprite(Texture2D texture, Texture2D crashtexture)
+        public Sprite(ContentManager content, GraphicsDeviceManager graphics)
         {
-            _texture = texture;
-            playercar = texture;
-            crash = crashtexture;
-            Position = new Vector2(300, 300);
+            _content = content;
+            _graphics = graphics;
+        }
+        public virtual void LoadContent()
+        {
+
         }
 
 
@@ -54,29 +55,33 @@ namespace NEA_Project.Core
             //var KeyboardState = Keyboard.GetState();
             //if(KeyboardState.IsKeyDown(Keys.X))
             //{
-                Position.X += Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                Rotation += 0.05f;
+              //  Position.X += Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+               // Rotation += 0.05f;
             //}
         }
-        public virtual void DetectCollision(Texture2D playercar, Vector2 position, float speed)
+        public Rectangle Rectangle
         {
-            if (playercar != null && _texture != null)
+            get
+            {
+                return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+            }
+        }
+        public virtual void DetectCollision(Sprite sprite)
+        {
+            if (sprite != null && _texture != null)
 
 
             {
-                if ((position.Y - playercar.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
-               && (position.Y + playercar.Height / 2f > Position.Y - _texture.Height / 2f)
-               && (position.X - playercar.Width / 2f < Position.X + _texture.Width / 2f)
-               && (position.X + playercar.Width / 2f > Position.X - _texture.Width / 2f))
+                if ((sprite.Position.Y - sprite.Rectangle.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
+               && (sprite.Position.Y + sprite.Rectangle.Height / 2f > Position.Y - _texture.Height / 2f)
+               && (sprite.Position.X - sprite.Rectangle.Width / 2f < Position.X + _texture.Width / 2f)
+               && (sprite.Position.X + sprite.Rectangle.Width / 2f > Position.X - _texture.Width / 2f))
                 {
                     Speed = 0f;
                     _texture = crash;
+                    //Position = _startPosition;
 
 
-                }
-                if (_texture == crash)
-                {
-                    Rotation = 0f;
                 }
             }
         }
