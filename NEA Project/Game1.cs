@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using NEA_Project.Core;
+using System.Collections.Generic;
 
 namespace NEA_Project
 {
@@ -25,7 +26,8 @@ namespace NEA_Project
         int _score = 0;
         Score score;
         int _bank = 0;
-        Bank bank;
+        int _banktotal;
+        Bank banktotal;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -53,11 +55,17 @@ namespace NEA_Project
             //map = Content.Load<Texture2D>("map");
             bat = Content.Load<Texture2D>("policecar");
             crash = Content.Load<Texture2D>("crash");
-            playercar = Content.Load<Texture2D>("playercar");
+            playercarreset = Content.Load<Texture2D>("playercar");
             policecar = Content.Load<Texture2D>("policecar");
             sprite = new Sprite(playercar, crash);
             score = new Score(Content.Load<SpriteFont>("font"));
-            level =new Level(Content.Load<Texture2D>("map"));
+            banktotal = new Bank(0);
+
+            /*loading levels*/
+            List<Texture2D> levels = new List<Texture2D>();
+            levels.Add(Content.Load<Texture2D>("map"));
+            levels.Add(Content.Load<Texture2D>("map2")); //need to make map2
+            level =new Level(levels);
 
 
             // TODO: use this.Content to load your game content here
@@ -70,6 +78,17 @@ namespace NEA_Project
 
             // TODO: Add your update logic here
             var kstate = Keyboard.GetState();
+            if (kstate.IsKeyDown(Keys.L))// level change
+            {
+                if (level.LevelNumber == 1)
+                {
+                    level.SetLevel(2);
+                }
+                else
+                {
+                    level.SetLevel(1);
+                }
+            }
             if(kstate.IsKeyDown(Keys.Up)) //moving in directions
             { 
                 position.Y = position.Y - speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -149,6 +168,7 @@ namespace NEA_Project
             //    sprite.Draw(_spriteBatch);
             //}
             //player.Draw(_spriteBatch);
+            level.Draw(_spriteBatch);
             _spriteBatch.Draw(playercar, position, null, Color.White);
             _spriteBatch.Draw(bat, batposition, null, Color.White);
             sprite.Draw(_spriteBatch);

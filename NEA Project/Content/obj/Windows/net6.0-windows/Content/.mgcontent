@@ -5,14 +5,18 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/ball.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/BankTotal.spritefont</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/crash.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/font.spritefont</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/map.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/map2.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/playercar.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/policecar.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/ScoreList.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

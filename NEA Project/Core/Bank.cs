@@ -10,11 +10,12 @@ namespace NEA_Project.Core
 {
     public class Bank
     {
-        protected int _score;
+        protected int _banktotal;
         protected Vector2 _position;
         protected SpriteFont _font;
+       
 
-        public Bank(SpriteFont banktotal)
+        public Bank(int banktotal)
         {
             _banktotal = banktotal;
             _position = new Vector2(10, 30);

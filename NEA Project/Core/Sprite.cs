@@ -60,19 +60,24 @@ namespace NEA_Project.Core
         }
         public virtual void DetectCollision(Texture2D playercar, Vector2 position, float speed)
         {
-            if ((position.Y - playercar.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
+            if (playercar != null && _texture != null)
+
+
+            {
+                if ((position.Y - playercar.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
                && (position.Y + playercar.Height / 2f > Position.Y - _texture.Height / 2f)
                && (position.X - playercar.Width / 2f < Position.X + _texture.Width / 2f)
                && (position.X + playercar.Width / 2f > Position.X - _texture.Width / 2f))
-            {
-                Speed = 0f;
-                _texture = crash;
-            
+                {
+                    Speed = 0f;
+                    _texture = crash;
 
-            }
-            if(_texture == crash)
-            {
-                Rotation = 0f;
+
+                }
+                if (_texture == crash)
+                {
+                    Rotation = 0f;
+                }
             }
         }
     }

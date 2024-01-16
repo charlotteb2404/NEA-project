@@ -42,3 +42,6 @@ C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Scienc
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\playercar.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\policecar.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\ball.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\BankTotal.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\map2.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.sourcelink.json
