@@ -27,5 +27,37 @@ namespace NEA_Project.Sprites
             noncrash = _content.Load<Texture2D>("policecar");
             crash = _content.Load<Texture2D>("crash");
         }
+        public override void Update(GameTime gameTime)
+        {
+            if (movesBeforeChange == 0)
+            {
+                movesBeforeChange = 5;
+
+                if (turnsBeforeChange == 0)
+                {
+                    turnsBeforeChange = 50;
+
+                    if (DateTime.Now.Ticks % 2 == 0)
+                    {
+                        RotationAngle = RotationAngle * -1;
+                    }
+
+                }
+                else
+                {
+                    turnsBeforeChange -= 1;
+                }
+
+                Rotation += RotationAngle;
+            }
+            else
+            {
+                Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                Position.X += Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                movesBeforeChange -= 1;
+            }
+            base.Update(gameTime);
+        }
+
     }
 }

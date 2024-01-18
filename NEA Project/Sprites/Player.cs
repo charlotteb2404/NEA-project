@@ -36,41 +36,46 @@ namespace NEA_Project.Sprites
         public override void Update(GameTime gameTime)
         {
             var kstate = Keyboard.GetState();
-            if(kstate.IsKeyDown(Keys.Up))
+            if (Speed > 0)
             {
-                Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                Position.X += Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            }
-            if (kstate.IsKeyDown(Keys.Down))
-            {
-                Position.Y += Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-                Position.X -= Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            }
-            if(kstate.IsKeyDown(Keys.Left))
-            {
-                Rotation -= RotationAngle;
-            }
-            if (kstate.IsKeyDown(Keys.Right))
-            {
-                Rotation += RotationAngle;
-            }
-            if (Rotation == -360f ||  Rotation == 360f)
-            {
-                Rotation = 0f; //so rotation value doesn't go too high
-            }
 
-            if(kstate.IsKeyDown(Keys.Space))
-            {
-                if(Speed == 0f)
+                if (kstate.IsKeyDown(Keys.Up))
                 {
-                    Rotation = 0f;
-                    RotationAngle = 0.05f;
-                    Speed = 200f;
-                    _texture = noncrash;
-                    Position = _startPosition;
+                    Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Position.X += Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                }
+                if (kstate.IsKeyDown(Keys.Down))
+                {
+                    Position.Y += Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Position.X -= Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                }
+                if (kstate.IsKeyDown(Keys.Left))
+                {
+                    Rotation -= RotationAngle;
+                }
+                if (kstate.IsKeyDown(Keys.Right))
+                {
+                    Rotation += RotationAngle;
+                }
+                if (Rotation == -360f || Rotation == 360f)
+                {
+                    Rotation = 0f; //so rotation value doesn't go too high
                 }
             }
-
+                if (kstate.IsKeyDown(Keys.Space))
+                {
+                    if (Speed == 0f)
+                    {
+                        Rotation = 0f;
+                        RotationAngle = 0.05f;
+                        Speed = 200f;
+                        _texture = noncrash;
+                        Position = _startPosition;
+                    }
+                }
+            base.Update(gameTime);
+               
         }
+
     }
 }

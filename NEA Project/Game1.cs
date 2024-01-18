@@ -17,6 +17,8 @@ namespace NEA_Project
         Policecar bat;
         float speed = 300f;
         Policecar policecar;
+        List<Policecar> policecars;
+        int numofpolicecars = 5;
         Level level;
         int health = 6;
         int _score = 0;
@@ -40,6 +42,12 @@ namespace NEA_Project
             playercar = new Player(Content, _graphics);
             policecar = new Policecar(Content, _graphics);
             bat = new Policecar(Content, _graphics);
+            policecars = new List<Policecar>();
+            for(int cars = 0; cars < 5; cars++)
+            {
+                Policecar copcar = new Policecar(Content, _graphics);
+                policecars.Add(copcar);
+            }
 
             base.Initialize();
         }
@@ -59,6 +67,11 @@ namespace NEA_Project
             levels.Add(Content.Load<Texture2D>("map"));
             levels.Add(Content.Load<Texture2D>("map2")); //need to make map2
             level =new Level(levels);
+
+            foreach(Policecar copcar in policecars)
+            {
+                copcar.LoadContent();
+            }
 
 
             // TODO: use this.Content to load your game content here
@@ -142,6 +155,11 @@ namespace NEA_Project
             playercar.Update(gameTime);
             policecar.Update(gameTime);
             bat.Update(gameTime);
+            foreach (Policecar copcar in policecars)
+            {
+                copcar.Update(gameTime);
+                playercar.DetectCollision(copcar);
+            }
             //if (kstate.IsKeyDown(Keys.X))
             //{
             //    sprite.Rotation += 10;
@@ -149,6 +167,7 @@ namespace NEA_Project
             //sprite.DetectCollision(playercar, position, speed);
             playercar.DetectCollision(policecar);
             playercar.DetectCollision(bat);
+            
 
             base.Update(gameTime);
         }
@@ -170,6 +189,10 @@ namespace NEA_Project
             bat.Draw(_spriteBatch);
             playercar.Draw(_spriteBatch);
             score.Draw(_spriteBatch);
+            foreach (Policecar copcar in policecars)
+            {
+                copcar.Draw(_spriteBatch);
+            }
             _spriteBatch.End();
 
             base.Draw(gameTime);

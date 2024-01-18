@@ -20,10 +20,12 @@ namespace NEA_Project.Core
         public Vector2 Position;
         public float Speed = 50f;
         public float Rotation;
-        public float RotationAngle;
+        public float RotationAngle = 0.05f;
         protected Vector2 _startPosition;
         protected ContentManager _content;
         protected GraphicsDeviceManager _graphics;
+        protected int movesBeforeChange = 0;
+        protected int turnsBeforeChange = 10;
         public Sprite()
         {
 
@@ -52,12 +54,7 @@ namespace NEA_Project.Core
         }
         public virtual void Update(GameTime gameTime)
         {
-            //var KeyboardState = Keyboard.GetState();
-            //if(KeyboardState.IsKeyDown(Keys.X))
-            //{
-              //  Position.X += Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-               // Rotation += 0.05f;
-            //}
+            StayWithinScreen(_graphics);
         }
         public Rectangle Rectangle
         {
@@ -82,6 +79,28 @@ namespace NEA_Project.Core
                     //Position = _startPosition;
 
 
+                }
+            }
+        }
+        public virtual void StayWithinScreen(GraphicsDeviceManager _graphics)
+        {
+            if (_texture != null)
+            {
+                if (Position.X > _graphics.PreferredBackBufferWidth - _texture.Width / 2)
+                {
+                    Position.X = _graphics.PreferredBackBufferWidth - _texture.Width / 2;
+                }
+                else if (Position.X < _texture.Width / 2)
+                {
+                    Position.X = _texture.Width / 2;
+                }
+                if (Position.Y > _graphics.PreferredBackBufferHeight - _texture.Height / 2)
+                {
+                    Position.Y = _graphics.PreferredBackBufferHeight - _texture.Height / 2;
+                }
+                else if (Position.Y < _texture.Height / 2)
+                {
+                    Position.Y = _texture.Height / 2;
                 }
             }
         }
