@@ -18,6 +18,8 @@ namespace NEA_Project
         float speed = 300f;
         Policecar policecar;
         List<Policecar> policecars;
+        Coin coin;
+        List<Coin> coins;
         int numofpolicecars = 5;
         Level level;
         int health = 6;
@@ -48,6 +50,14 @@ namespace NEA_Project
                 Policecar copcar = new Policecar(Content, _graphics);
                 policecars.Add(copcar);
             }
+            coin = new Coin(Content, _graphics);
+            coins = new List<Coin>();
+            for(int money = 0; money < 10; money++)
+            {
+                Coin coin = new Coin(Content, _graphics);
+                coins.Add(coin);
+            }
+
 
             base.Initialize();
         }
@@ -71,6 +81,10 @@ namespace NEA_Project
             foreach(Policecar copcar in policecars)
             {
                 copcar.LoadContent();
+            }
+            foreach(Coin coin in coins)
+            {
+                coin.LoadContent();
             }
 
 
@@ -151,14 +165,20 @@ namespace NEA_Project
             }
 
 
-
+            coin.Update(gameTime);
             playercar.Update(gameTime);
             policecar.Update(gameTime);
             bat.Update(gameTime);
+       
             foreach (Policecar copcar in policecars)
             {
                 copcar.Update(gameTime);
                 playercar.DetectCollision(copcar);
+            }
+            foreach (Coin coin in coins)
+            {
+                coin.Update(gameTime);
+                playercar.DetectCollision(coin);
             }
             //if (kstate.IsKeyDown(Keys.X))
             //{
@@ -167,6 +187,7 @@ namespace NEA_Project
             //sprite.DetectCollision(playercar, position, speed);
             playercar.DetectCollision(policecar);
             playercar.DetectCollision(bat);
+            playercar.DetectCollision(coin);
             
 
             base.Update(gameTime);
@@ -189,9 +210,14 @@ namespace NEA_Project
             bat.Draw(_spriteBatch);
             playercar.Draw(_spriteBatch);
             score.Draw(_spriteBatch);
+            coin.Draw(_spriteBatch);
             foreach (Policecar copcar in policecars)
             {
                 copcar.Draw(_spriteBatch);
+            }
+            foreach (Coin coin in coins)
+            {
+                coin.Draw(_spriteBatch);
             }
             _spriteBatch.End();
 

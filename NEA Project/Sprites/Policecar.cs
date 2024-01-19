@@ -12,7 +12,7 @@ namespace NEA_Project.Sprites
 {
     public class Policecar: Sprite
     {
-        protected static Random random = new Random(Guid.NewGuid().GetHashCode());
+ 
         public Policecar(ContentManager content, GraphicsDeviceManager graphics) : base(content, graphics)
         {
             int randomx = random.Next(0,1000);

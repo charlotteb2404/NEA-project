@@ -17,6 +17,8 @@ namespace NEA_Project.Core
         protected Texture2D noncrash;
         protected Texture2D crash;
         protected Texture2D playercar;
+        protected Texture2D _coin;
+        protected Texture2D _takencoin;
         public Vector2 Position;
         public float Speed = 50f;
         public float Rotation;
@@ -26,6 +28,7 @@ namespace NEA_Project.Core
         protected GraphicsDeviceManager _graphics;
         protected int movesBeforeChange = 0;
         protected int turnsBeforeChange = 10;
+        protected static Random random = new Random(Guid.NewGuid().GetHashCode());
         public Sprite()
         {
 
@@ -58,9 +61,18 @@ namespace NEA_Project.Core
         }
         public Rectangle Rectangle
         {
+            
             get
             {
-                return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+                if (_texture != null)
+                {
+                    return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height);
+                }
+                else
+                {
+                    return new Rectangle(0, 0, 0, 0);
+                }
+             
             }
         }
         public virtual void DetectCollision(Sprite sprite)
