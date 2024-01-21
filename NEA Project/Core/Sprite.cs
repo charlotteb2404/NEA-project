@@ -17,8 +17,8 @@ namespace NEA_Project.Core
         protected Texture2D noncrash;
         protected Texture2D crash;
         protected Texture2D playercar;
-        protected Texture2D _coin;
-        protected Texture2D _takencoin;
+        //protected Texture2D _coin;
+        //protected Texture2D _takencoin;
         public Vector2 Position;
         public float Speed = 50f;
         public float Rotation;
@@ -75,24 +75,41 @@ namespace NEA_Project.Core
              
             }
         }
-        public virtual void DetectCollision(Sprite sprite)
+        public virtual bool DetectCollision(Sprite sprite)
         {
             if (sprite != null && _texture != null)
 
 
+
             {
-                if ((sprite.Position.Y - sprite.Rectangle.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
-               && (sprite.Position.Y + sprite.Rectangle.Height / 2f > Position.Y - _texture.Height / 2f)
-               && (sprite.Position.X - sprite.Rectangle.Width / 2f < Position.X + _texture.Width / 2f)
-               && (sprite.Position.X + sprite.Rectangle.Width / 2f > Position.X - _texture.Width / 2f))
+                if (sprite.Position != Position)
                 {
-                    Speed = 0f;
-                    _texture = crash;
-                    //Position = _startPosition;
 
 
+                    // if ((sprite.Position.Y - sprite.Rectangle.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
+                    //&& (sprite.Position.Y + sprite.Rectangle.Height / 2f > Position.Y - _texture.Height / 2f)
+                    //&& (sprite.Position.X - sprite.Rectangle.Width / 2f < Position.X + _texture.Width / 2f)
+                    //&& (sprite.Position.X + sprite.Rectangle.Width / 2f > Position.X - _texture.Width / 2f))
+                    if ((Position.Y - _texture.Height / 2f < sprite.Position.Y + sprite.Rectangle.Height / 2f)
+                     && (Position.Y + _texture.Height / 2f > sprite.Position.Y - sprite.Rectangle.Height / 2f)
+                     && (Position.X - _texture.Width / 2f < sprite.Position.X + sprite.Rectangle.Width / 2f)
+                     && (Position.X + _texture.Width / 2f > sprite.Position.X - sprite.Rectangle.Width / 2f)
+     )
+                    {
+                        Speed = 0f;
+                        _texture = crash;
+                        return true;
+                        //Position = _startPosition;
+
+
+                    }
                 }
+
+                
             }
+            
+                return false;
+            
         }
         public virtual void StayWithinScreen(GraphicsDeviceManager _graphics)
         {

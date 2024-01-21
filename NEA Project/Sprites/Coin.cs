@@ -23,9 +23,20 @@ namespace NEA_Project.Sprites
         }
         public override void LoadContent()
         {
-            _coin = _content.Load<Texture2D>("coin");//copy policecar
-            _takencoin = _content.Load<Texture2D>("takencoin");
+            _texture = _content.Load<Texture2D>("coin");//copy policecar
+            crash = _content.Load<Texture2D>("takencoin");
         }
-        
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+        }
+        public override bool DetectCollision(Sprite sprite)
+        {
+            if(_texture == crash)
+            {
+                return false;
+            }
+            return base.DetectCollision(sprite);
+        }
     }
 }

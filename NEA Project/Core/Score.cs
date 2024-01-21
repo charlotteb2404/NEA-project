@@ -27,5 +27,9 @@ namespace NEA_Project.Core
         {
             _score = score;
         }
+        public virtual int GetScore()
+        {
+            return _score;
+        }
     }
 }

@@ -32,8 +32,7 @@ namespace NEA_Project.Sprites
             _texture = _content.Load<Texture2D>("playercar");
             noncrash = _content.Load<Texture2D>("playercar");
             crash = _content.Load<Texture2D>("crash");
-            _coin = _content.Load<Texture2D>("coin");
-            _takencoin = _content.Load<Texture2D>("takencoin");
+            
         }
         public override void Update(GameTime gameTime)
         {

@@ -13,12 +13,9 @@ namespace NEA_Project
         private SpriteBatch _spriteBatch;
         Player playercar;
         //Texture2D map;
-        //Vector2 mapposition;
-        Policecar bat;
+        //Vector2 mapposition;      
         float speed = 300f;
-        Policecar policecar;
         List<Policecar> policecars;
-        Coin coin;
         List<Coin> coins;
         int numofpolicecars = 5;
         Level level;
@@ -42,15 +39,14 @@ namespace NEA_Project
         {
             // TODO: Add your initialization logic here
             playercar = new Player(Content, _graphics);
-            policecar = new Policecar(Content, _graphics);
-            bat = new Policecar(Content, _graphics);
+          
             policecars = new List<Policecar>();
             for(int cars = 0; cars < 5; cars++)
             {
                 Policecar copcar = new Policecar(Content, _graphics);
                 policecars.Add(copcar);
             }
-            coin = new Coin(Content, _graphics);
+          
             coins = new List<Coin>();
             for(int money = 0; money < 10; money++)
             {
@@ -66,9 +62,7 @@ namespace NEA_Project
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             playercar.LoadContent();
-            //map = Content.Load<Texture2D>("map");
-            bat.LoadContent();
-            policecar.LoadContent();
+       
             score = new Score(Content.Load<SpriteFont>("font"));
             banktotal = new Bank(0);
 
@@ -98,77 +92,25 @@ namespace NEA_Project
 
             // TODO: Add your update logic here
             var kstate = Keyboard.GetState();
-            //if (kstate.IsKeyDown(Keys.L))// level change
-            //{
-            //    if (level.LevelNumber == 1)
-            //    {
-            //        level.SetLevel(2);
-            //    }
-            //    else
-            //    {
-            //        level.SetLevel(1);
-            //    }
-            //}
-            //if(kstate.IsKeyDown(Keys.Up)) //moving in directions
-            //{ 
-            //    position.Y = position.Y - speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
 
-            //}
-            //if(kstate.IsKeyDown(Keys.Left))
-            //{
-            //    position.X = position.X - speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //}
-            //if(kstate.IsKeyDown(Keys.Down))
-            //{
-            //    position.Y = position.Y + speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //}
-            //if(kstate.IsKeyDown(Keys.Right))
-            //{
-            //    position.X = position.X + speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
-            //}
-            //if(health == 0)
-            //{
-            //    speed = 0f;
-            //    playercar = crash;  
 
-            //}
-
-            //if((position.Y - playercar.Height/2f< batposition.Y + bat.Height/2f)
-            //    && (position.Y + playercar.Height/2f > batposition.Y - bat.Height/2f)
-            //    && (position.X - playercar.Width/2f < batposition.X + bat.Width/2f)
-            //    &&(position.X + playercar.Width/2f > batposition.X - bat.Width/2f))
+            //int scorevalue = score.GetScore();
+            //score.SetScore(_score);
+            
+           // _score = (int)gameTime.TotalGameTime.TotalSeconds;
+            
+            //if (kstate.IsKeyDown(Keys.B))
             //{
-            //    speed = 0f;
-            //    playercar = crash;
+            //    _bank = _bank + _score; //stores score in bank if B is pressed then restarts the count, need to make it start going up from 0 not just show that it does
             //    _score = 0;
 
-
-            //}
-            //if (kstate.IsKeyDown(Keys.Space)&& health > 0)
-            //{
-            //    speed = 300f;
-            //    position.X = _graphics.PreferredBackBufferWidth / 2;
-            //    position.Y = _graphics.PreferredBackBufferHeight / 2;
-            //    playercar = playercarreset;
-            //    //health = health - 1;
                 
             //}
-            score.SetScore(_score);
-            _score = (int)gameTime.TotalGameTime.TotalSeconds;
+
+
             
-            if (kstate.IsKeyDown(Keys.B))
-            {
-                _bank = _bank + _score; //stores score in bank if B is pressed then restarts the count, need to make it start going up from 0 not just show that it does
-                _score = 0;
-
-                
-            }
-
-
-            coin.Update(gameTime);
             playercar.Update(gameTime);
-            policecar.Update(gameTime);
-            bat.Update(gameTime);
+            
        
             foreach (Policecar copcar in policecars)
             {
@@ -178,16 +120,20 @@ namespace NEA_Project
             foreach (Coin coin in coins)
             {
                 coin.Update(gameTime);
-                playercar.DetectCollision(coin);
+                bool Collision = coin.DetectCollision(playercar);
+                if(Collision == true)
+                {
+                    int tempscore = score.GetScore();
+                    score.SetScore(tempscore + 1);
+                }
+                
             }
             //if (kstate.IsKeyDown(Keys.X))
             //{
             //    sprite.Rotation += 10;
             //}
             //sprite.DetectCollision(playercar, position, speed);
-            playercar.DetectCollision(policecar);
-            playercar.DetectCollision(bat);
-            playercar.DetectCollision(coin);
+            //playercar.DetectCollision(coin);
             
 
             base.Update(gameTime);
@@ -206,11 +152,8 @@ namespace NEA_Project
             //}
             //player.Draw(_spriteBatch);
             level.Draw(_spriteBatch);
-            policecar.Draw(_spriteBatch);
-            bat.Draw(_spriteBatch);
             playercar.Draw(_spriteBatch);
             score.Draw(_spriteBatch);
-            coin.Draw(_spriteBatch);
             foreach (Policecar copcar in policecars)
             {
                 copcar.Draw(_spriteBatch);
