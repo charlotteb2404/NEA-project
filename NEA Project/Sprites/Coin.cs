@@ -38,5 +38,6 @@ namespace NEA_Project.Sprites
             }
             return base.DetectCollision(sprite);
         }
+
     }
 }

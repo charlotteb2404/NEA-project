@@ -73,6 +73,7 @@ namespace NEA_Project.Sprites
                         _texture = noncrash;
                         Position = _startPosition;
                     }
+                    
                 } // need to do collecting coins
             base.Update(gameTime);
                

@@ -19,9 +19,11 @@ namespace NEA_Project
         List<Coin> coins;
         int numofpolicecars = 5;
         Level level;
-        int health = 6;
+        int _health = 6;
+        Health health;
         int _score = 0;
         Score score;
+        
         int _bank = 0;
         int _banktotal;
         Bank banktotal;
@@ -48,7 +50,7 @@ namespace NEA_Project
             }
           
             coins = new List<Coin>();
-            for(int money = 0; money < 10; money++)
+            for(int money = 0; money < 20; money++)
             {
                 Coin coin = new Coin(Content, _graphics);
                 coins.Add(coin);
@@ -115,7 +117,23 @@ namespace NEA_Project
             foreach (Policecar copcar in policecars)
             {
                 copcar.Update(gameTime);
-                playercar.DetectCollision(copcar);
+                bool CarCollision = playercar.DetectCollision(copcar);
+                if(CarCollision == true)
+                {
+                    _health--;
+                    if(_health == 0)
+                    {
+                        speed = 0f;
+                        Exit();
+                    }
+                   // int temphealth = health.GetHealth();
+                   // temphealth = _health;
+                   // health.SetHealth(temphealth - 1); 
+                   //if(temphealth == 0)
+                   // {
+                   //     speed = 0f;
+                   // }
+                }
             }
             foreach (Coin coin in coins)
             {
@@ -125,9 +143,11 @@ namespace NEA_Project
                 {
                     int tempscore = score.GetScore();
                     score.SetScore(tempscore + 1);
+                    
                 }
                 
             }
+            
             //if (kstate.IsKeyDown(Keys.X))
             //{
             //    sprite.Rotation += 10;
