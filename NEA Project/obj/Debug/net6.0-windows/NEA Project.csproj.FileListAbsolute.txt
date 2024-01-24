@@ -46,3 +46,12 @@ C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Scienc
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\map2.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\coin.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\takencoin.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.sourcelink.json
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\building1.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\building2.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl1map.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl2map.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl3map.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl4map.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl5map.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\policeofficer.xnb

@@ -18,7 +18,7 @@ namespace NEA_Project
         List<Policecar> policecars;
         List<Coin> coins;
         int numofpolicecars = 5;
-        Level level;
+        Levels levels;
         int _health = 6;
         Health health;
         int _score = 0;
@@ -30,8 +30,8 @@ namespace NEA_Project
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
-            _graphics.PreferredBackBufferHeight = 1000;
-            _graphics.PreferredBackBufferWidth = 1000;
+            _graphics.PreferredBackBufferHeight = 1800;
+            _graphics.PreferredBackBufferWidth = 1800;
             Window.AllowUserResizing = true;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -41,6 +41,15 @@ namespace NEA_Project
         {
             // TODO: Add your initialization logic here
             playercar = new Player(Content, _graphics);
+            List<Level> templevels = new List<Level>();
+            for(int maplevels = 0; maplevels < 5; maplevels++)
+            {
+                Level templevel = new Level(Content, $"maps/lvl{maplevels + 1}map");
+                templevels.Add(templevel);
+            
+            }
+            levels = new Levels(templevels);
+            
           
             policecars = new List<Policecar>();
             for(int cars = 0; cars < 5; cars++)
@@ -69,10 +78,8 @@ namespace NEA_Project
             banktotal = new Bank(0);
 
             /*loading levels*/
-            List<Texture2D> levels = new List<Texture2D>();
-            levels.Add(Content.Load<Texture2D>("map"));
-            levels.Add(Content.Load<Texture2D>("map2")); //need to make map2
-            level =new Level(levels);
+            levels.LoadContent();
+
 
             foreach(Policecar copcar in policecars)
             {
@@ -118,13 +125,16 @@ namespace NEA_Project
             {
                 copcar.Update(gameTime);
                 bool CarCollision = playercar.DetectCollision(copcar);
+                
                 if(CarCollision == true)
                 {
+                    copcar.Speed = 0f;
+                    copcar.RotationAngle = 0f;
                     _health--;
                     if(_health == 0)
                     {
                         speed = 0f;
-                        Exit();
+                        //Exit(0);
                     }
                    // int temphealth = health.GetHealth();
                    // temphealth = _health;
@@ -171,7 +181,8 @@ namespace NEA_Project
             //    sprite.Draw(_spriteBatch);
             //}
             //player.Draw(_spriteBatch);
-            level.Draw(_spriteBatch);
+            levels.CurrentLevelNum = 4;
+            levels.Draw(_spriteBatch);
             playercar.Draw(_spriteBatch);
             score.Draw(_spriteBatch);
             foreach (Policecar copcar in policecars)

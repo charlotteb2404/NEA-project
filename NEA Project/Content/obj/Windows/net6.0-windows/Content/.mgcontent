@@ -9,10 +9,18 @@
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/../../../../images/policecar.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/ball.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/BankTotal.spritefont</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/building1.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/building2.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/coin.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/font.spritefont</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/map.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/map2.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/maps/lvl1map.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/maps/lvl2map.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/maps/lvl3map.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/maps/lvl4map.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/maps/lvl5map.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/policeofficer.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/ScoreList.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/takencoin.png</File>
   </SourceFiles>
@@ -20,6 +28,14 @@
     <File>crash.png</File>
     <File>playercar.png</File>
     <File>policecar.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

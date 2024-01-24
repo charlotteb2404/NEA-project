@@ -15,8 +15,8 @@ namespace NEA_Project.Sprites
 
         public Coin(ContentManager content, GraphicsDeviceManager graphics) : base(content, graphics)
         {
-            int randomx = random.Next(0, 1000);
-            int randomy = random.Next(0, 1000);
+            int randomx = random.Next(0, graphics.PreferredBackBufferWidth);
+            int randomy = random.Next(0, graphics.PreferredBackBufferHeight);
             Position = new Vector2(randomx, randomy);
             _startPosition = Position;
 

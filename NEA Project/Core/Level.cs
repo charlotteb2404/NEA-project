@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -12,32 +13,27 @@ namespace NEA_Project.Core
     {
         protected Texture2D _map;
         protected Vector2 _position;
-        protected List<Texture2D> _levels = new List<Texture2D>();
         public int LevelNumber = 1;
+        protected string mapcontent;
+        ContentManager _content;
 
-        public Level(Texture2D map) 
+        public Level(ContentManager content, string contentname) 
         {
-            _map = map;
             _position = new Vector2(0, 0);
+            mapcontent = contentname;
+            _content = content;
         
         }
 
-        public Level(List<Texture2D> levelMaps)
+        public virtual void LoadContent()
         {
-            if(levelMaps.Count >= 0)
-            {
-                _map = levelMaps[0];
-                _levels = levelMaps;
-            }
-            _position = new Vector2(0, 0);
+            _map = _content.Load<Texture2D>(mapcontent);
+            
         }
 
-        
-        public virtual void SetLevel (int levelNumber)
-        {
-            _map = _levels[levelNumber - 1];
-            LevelNumber = levelNumber;
-        }
+       
+
+     
 
         public virtual void Draw(SpriteBatch spriteBatch) 
         {
