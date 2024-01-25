@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using NEA_Project.models;
+using NEA_Project.repos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +12,23 @@ namespace NEA_Project.Core
 {
     public class Levels
     {
+        private readonly ContentManager content;
         private List<Level> _levels = new List<Level>();
         private int levelnum = 0;
-        public Levels() 
+        public Levels(ContentManager content) 
         {
+            this.content = content;
+            LevelsRepo repo = new LevelsRepo();
+
+            List<DatabaseLevel> templevels = repo.getall();
+            for (int maplevels = 0; maplevels < templevels.Count; maplevels++)
+            {
+                Level templevel = new Level(content, templevels[maplevels].MapSource);
+                _levels.Add(templevel);
+
+            }
+
+            
         }
         public Levels(List<Level> levels)
         {

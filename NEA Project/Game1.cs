@@ -41,14 +41,14 @@ namespace NEA_Project
         {
             // TODO: Add your initialization logic here
             playercar = new Player(Content, _graphics);
-            List<Level> templevels = new List<Level>();
-            for(int maplevels = 0; maplevels < 5; maplevels++)
-            {
-                Level templevel = new Level(Content, $"maps/lvl{maplevels + 1}map");
-                templevels.Add(templevel);
+            //List<Level> templevels = new List<Level>();
+            //for(int maplevels = 0; maplevels < 5; maplevels++)
+            //{
+            //    Level templevel = new Level(Content, $"maps/lvl{maplevels + 1}map");
+            //    templevels.Add(templevel);
             
-            }
-            levels = new Levels(templevels);
+            //}
+            levels = new Levels(Content);
             
           
             policecars = new List<Policecar>();
