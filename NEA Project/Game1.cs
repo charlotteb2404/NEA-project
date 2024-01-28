@@ -9,6 +9,8 @@ namespace NEA_Project
 {
     public class Game1 : Game
     {
+        private StartMenu _menu;
+        private bool GameStarted = false;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         Player playercar;
@@ -40,19 +42,14 @@ namespace NEA_Project
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            _menu = new StartMenu(Content);
             playercar = new Player(Content, _graphics);
-            //List<Level> templevels = new List<Level>();
-            //for(int maplevels = 0; maplevels < 5; maplevels++)
-            //{
-            //    Level templevel = new Level(Content, $"maps/lvl{maplevels + 1}map");
-            //    templevels.Add(templevel);
             
-            //}
             levels = new Levels(Content);
             
           
             policecars = new List<Policecar>();
-            for(int cars = 0; cars < 5; cars++)
+            for(int cars = 0; cars < levels.CurrentLevel.NumberOfPolice; cars++)
             {
                 Policecar copcar = new Policecar(Content, _graphics);
                 policecars.Add(copcar);
@@ -71,6 +68,7 @@ namespace NEA_Project
 
         protected override void LoadContent()
         {
+            _menu.LoadContent();
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             playercar.LoadContent();
        
@@ -103,70 +101,60 @@ namespace NEA_Project
             var kstate = Keyboard.GetState();
 
 
-            //int scorevalue = score.GetScore();
-            //score.SetScore(_score);
-            
-           // _score = (int)gameTime.TotalGameTime.TotalSeconds;
-            
-            //if (kstate.IsKeyDown(Keys.B))
-            //{
-            //    _bank = _bank + _score; //stores score in bank if B is pressed then restarts the count, need to make it start going up from 0 not just show that it does
-            //    _score = 0;
 
-                
-            //}
-
-
-            
-            playercar.Update(gameTime);
-            
-       
-            foreach (Policecar copcar in policecars)
+            if (GameStarted)
             {
-                copcar.Update(gameTime);
-                bool CarCollision = playercar.DetectCollision(copcar);
-                
-                if(CarCollision == true)
+                playercar.Update(gameTime);
+
+
+                foreach (Policecar copcar in policecars)
                 {
-                    copcar.Speed = 0f;
-                    copcar.RotationAngle = 0f;
-                    _health--;
-                    if(_health == 0)
+                    copcar.Update(gameTime);
+                    bool CarCollision = playercar.DetectCollision(copcar);
+
+                    if (CarCollision == true)
                     {
-                        speed = 0f;
-                        //Exit(0);
-                    }
-                   // int temphealth = health.GetHealth();
-                   // temphealth = _health;
-                   // health.SetHealth(temphealth - 1); 
-                   //if(temphealth == 0)
-                   // {
-                   //     speed = 0f;
-                   // }
-                }
-            }
-            foreach (Coin coin in coins)
-            {
-                coin.Update(gameTime);
-                bool Collision = coin.DetectCollision(playercar);
-                if(Collision == true)
-                {
-                    int tempscore = score.GetScore();
-                    score.SetScore(tempscore + 1);
-                    
-                }
-                
-            }
-            
-            //if (kstate.IsKeyDown(Keys.X))
-            //{
-            //    sprite.Rotation += 10;
-            //}
-            //sprite.DetectCollision(playercar, position, speed);
-            //playercar.DetectCollision(coin);
-            
+                        copcar.Speed = 0f;
+                        copcar.RotationAngle = 0f;
+                        _health--;
+                        if (_health == 0)
+                        {
+                            speed = 0f;
+                            //Exit();
+                        }
 
-            base.Update(gameTime);
+                    }
+                }
+                foreach (Coin coin in coins)
+                {
+                    coin.Update(gameTime);
+                    bool Collision = coin.DetectCollision(playercar);
+                    if (Collision == true)
+                    {
+                        int tempscore = score.GetScore();
+                        score.SetScore(tempscore + 1);
+
+                    }
+
+                }
+
+
+
+
+                base.Update(gameTime);
+            }
+            else
+            {
+                if (_menu.Update(gameTime) == "Start")
+                {
+                    GameStarted = true;
+                }
+
+                if (_menu.Update(gameTime)== "Exit")
+                {
+                    Exit();
+                }
+            }
         }
 
         protected override void Draw(GameTime gameTime)
@@ -175,12 +163,7 @@ namespace NEA_Project
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            //_spriteBatch.Draw(map, mapposition, null, Color.White);
-            //foreach(var sprite in sprites)
-            //{
-            //    sprite.Draw(_spriteBatch);
-            //}
-            //player.Draw(_spriteBatch);
+            
             levels.CurrentLevelNum = 4;
             levels.Draw(_spriteBatch);
             playercar.Draw(_spriteBatch);
@@ -193,9 +176,11 @@ namespace NEA_Project
             {
                 coin.Draw(_spriteBatch);
             }
+            _menu.Draw(_spriteBatch);
             _spriteBatch.End();
 
             base.Draw(gameTime);
+        
         }
     }
 }

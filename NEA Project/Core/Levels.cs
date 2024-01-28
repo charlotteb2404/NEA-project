@@ -23,7 +23,7 @@ namespace NEA_Project.Core
             List<DatabaseLevel> templevels = repo.getall();
             for (int maplevels = 0; maplevels < templevels.Count; maplevels++)
             {
-                Level templevel = new Level(content, templevels[maplevels].MapSource);
+                Level templevel = new Level(content, templevels[maplevels]);
                 _levels.Add(templevel);
 
             }

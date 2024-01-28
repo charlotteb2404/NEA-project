@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using NEA_Project.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,16 +12,20 @@ namespace NEA_Project.Core
 {
     public class Level
     {
+        private int _numberOfPolice;
+        private int _difficulty;
         protected Texture2D _map;
         protected Vector2 _position;
         public int LevelNumber = 1;
         protected string mapcontent;
         ContentManager _content;
 
-        public Level(ContentManager content, string contentname) 
+        public Level(ContentManager content, DatabaseLevel data) 
         {
             _position = new Vector2(0, 0);
-            mapcontent = contentname;
+            mapcontent = data.MapSource;
+            _numberOfPolice = data.NumberOfPolice;
+            _difficulty = data.Difficulty;
             _content = content;
         
         }
@@ -31,7 +36,15 @@ namespace NEA_Project.Core
             
         }
 
-       
+        public int NumberOfPolice 
+        {
+            get { return _numberOfPolice; }
+        
+        }
+        public int Difficulty
+        {
+            get { return _difficulty; }
+        }
 
      
 
