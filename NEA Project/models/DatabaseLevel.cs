@@ -13,5 +13,6 @@ namespace NEA_Project.models
         public string MapSource { get; set; }
         public int NumberOfPolice { get; set; }
         public int Difficulty { get; set; }
+        public int NumberOfCoins { get; set; }
     }
 }

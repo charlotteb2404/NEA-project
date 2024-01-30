@@ -34,9 +34,12 @@ namespace NEA_Project.Core
         {
             if (ShowMenu)
             {
-                
 
-                
+
+                spriteBatch.DrawString(font, $"Collect coins and try your best to avoid the police", new Vector2(300, 500), Color.White);
+                spriteBatch.DrawString(font, $"Player 1 Controls: Up, Down, Left, Right Arrows", new Vector2(300, 600), Color.White);
+                spriteBatch.DrawString(font, $"Player 2 Controls: W - Up, S - Down, A - Left, D - Right", new Vector2(300, 700), Color.White);
+                spriteBatch.DrawString(font, $"Press M to return to Menu", new Vector2(300, 400), Color.White);
                 int VerticalPosition = 900;
                 foreach (var item in menuitems)
                 {

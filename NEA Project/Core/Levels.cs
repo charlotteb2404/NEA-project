@@ -27,7 +27,7 @@ namespace NEA_Project.Core
                 _levels.Add(templevel);
 
             }
-
+            //levelnum = 4;
             
         }
         public Levels(List<Level> levels)
@@ -48,10 +48,28 @@ namespace NEA_Project.Core
         }
         public Level CurrentLevel
         {
+            
             get
             {
-                return _levels[levelnum];
+                if(levelnum < _levels.Count)
+                {
+                    return _levels[levelnum];
+                }
+                else
+                {
+                    return _levels[levelnum - 1];
+                }
+                
             }
+        }
+        public bool NextLevel()
+        {
+            if(levelnum < _levels.Count) 
+            {
+                levelnum = levelnum + 1;
+                return true;
+            }
+            return false;
         }
         public virtual void Draw(SpriteBatch spriteBatch)
         {

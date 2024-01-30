@@ -14,6 +14,19 @@ namespace NEA_Project.Sprites
 {
     public class Player : Sprite
     {
+        public int NumberOfLives { get; set; }
+        private bool IsCrashed = false;
+        public override bool DetectCollision(Sprite sprite)
+        {
+            var collided = base.DetectCollision(sprite);
+            if (collided && !IsCrashed)
+            {
+                NumberOfLives -= 1;
+                IsCrashed = true;
+            }
+            return collided;
+            
+        }
         //public Player(Texture2D texture,Texture2D crashtexture, Vector2 startPosition) : base(texture, crashtexture)
         //{
         //    this.Speed = 200f;
@@ -25,6 +38,7 @@ namespace NEA_Project.Sprites
             _startPosition = Position;
             Speed = 200f;
             RotationAngle = 0.05f;
+            NumberOfLives = 3;
         }
 
         public override void LoadContent()
@@ -37,7 +51,7 @@ namespace NEA_Project.Sprites
         public override void Update(GameTime gameTime)
         {
             var kstate = Keyboard.GetState();
-            if (Speed > 0)
+            if (!IsCrashed)
             {
 
                 if (kstate.IsKeyDown(Keys.Up))
@@ -65,13 +79,14 @@ namespace NEA_Project.Sprites
             }
                 if (kstate.IsKeyDown(Keys.Space))
                 {
-                    if (Speed == 0f)
+                    if (IsCrashed && NumberOfLives > 0)
                     {
                         Rotation = 0f;
                         RotationAngle = 0.05f;
                         Speed = 200f;
                         _texture = noncrash;
                         Position = _startPosition;
+                        IsCrashed = false;
                     }
                     
                 } // need to do collecting coins

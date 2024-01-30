@@ -48,22 +48,29 @@ namespace NEA_Project
             levels = new Levels(Content);
             
           
-            policecars = new List<Policecar>();
-            for(int cars = 0; cars < levels.CurrentLevel.NumberOfPolice; cars++)
-            {
-                Policecar copcar = new Policecar(Content, _graphics);
-                policecars.Add(copcar);
-            }
-          
-            coins = new List<Coin>();
-            for(int money = 0; money < 20; money++)
-            {
-                Coin coin = new Coin(Content, _graphics);
-                coins.Add(coin);
-            }
+           SetUpLevel();
 
 
             base.Initialize();
+        }
+        private void SetUpLevel()
+        {
+            policecars = new List<Policecar>();
+            for (int cars = 0; cars < levels.CurrentLevel.NumberOfPolice; cars++)
+            {
+                Policecar copcar = new Policecar(Content, _graphics);
+                copcar.LoadContent();
+                policecars.Add(copcar);
+
+            }
+
+            coins = new List<Coin>();
+            for (int money = 0; money < levels.CurrentLevel.NumberOfCoins; money++)
+            {
+                Coin coin = new Coin(Content, _graphics);
+                coin.LoadContent();
+                coins.Add(coin);
+            }
         }
 
         protected override void LoadContent()
@@ -104,6 +111,11 @@ namespace NEA_Project
 
             if (GameStarted)
             {
+                if(kstate.IsKeyDown(Keys.M))
+                {
+                    GameStarted = false;
+                    _menu.ShowMenu = true;
+                }
                 playercar.Update(gameTime);
 
 
@@ -133,13 +145,30 @@ namespace NEA_Project
                     {
                         int tempscore = score.GetScore();
                         score.SetScore(tempscore + 1);
-
+                        levels.CurrentLevel.NumberOfCoins = levels.CurrentLevel.NumberOfCoins - 1;
                     }
 
                 }
+                score.Lives = playercar.NumberOfLives;
+                if(playercar.NumberOfLives == 0)
+                {
+                    GameStarted = false; _menu.ShowMenu = true;
+                }
 
 
-
+                if(levels.CurrentLevel.NumberOfCoins == 0)
+                {
+                    
+                    var success = levels.NextLevel();
+                    if (success)
+                    {
+                        SetUpLevel();
+                    }
+                    else
+                    {
+                        score.GameCompleted = true;
+                    }
+                }
 
                 base.Update(gameTime);
             }
@@ -164,7 +193,7 @@ namespace NEA_Project
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             
-            levels.CurrentLevelNum = 4;
+
             levels.Draw(_spriteBatch);
             playercar.Draw(_spriteBatch);
             score.Draw(_spriteBatch);

@@ -86,10 +86,7 @@ namespace NEA_Project.Core
                 {
 
 
-                    // if ((sprite.Position.Y - sprite.Rectangle.Height / 2f < Position.Y + _texture.Height / 2f) //collision stops movement
-                    //&& (sprite.Position.Y + sprite.Rectangle.Height / 2f > Position.Y - _texture.Height / 2f)
-                    //&& (sprite.Position.X - sprite.Rectangle.Width / 2f < Position.X + _texture.Width / 2f)
-                    //&& (sprite.Position.X + sprite.Rectangle.Width / 2f > Position.X - _texture.Width / 2f))
+                  
                     if ((Position.Y - _texture.Height / 2f < sprite.Position.Y + sprite.Rectangle.Height / 2f)
                      && (Position.Y + _texture.Height / 2f > sprite.Position.Y - sprite.Rectangle.Height / 2f)
                      && (Position.X - _texture.Width / 2f < sprite.Position.X + sprite.Rectangle.Width / 2f)
