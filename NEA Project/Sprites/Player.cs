@@ -16,6 +16,7 @@ namespace NEA_Project.Sprites
     {
         public int NumberOfLives { get; set; }
         private bool IsCrashed = false;
+        private bool TwoPlayerMode;
         public override bool DetectCollision(Sprite sprite)
         {
             var collided = base.DetectCollision(sprite);
@@ -32,13 +33,14 @@ namespace NEA_Project.Sprites
         //    this.Speed = 200f;
         //    this._startPosition = startPosition;
         //}
-        public Player(ContentManager content, GraphicsDeviceManager graphics): base(content, graphics) 
+        public Player(ContentManager content, GraphicsDeviceManager graphics, bool twoplayermode = false): base(content, graphics) 
         {
             Position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
             _startPosition = Position;
             Speed = 200f;
             RotationAngle = 0.05f;
             NumberOfLives = 3;
+            TwoPlayerMode = twoplayermode;
         }
 
         public override void LoadContent()
@@ -51,7 +53,7 @@ namespace NEA_Project.Sprites
         public override void Update(GameTime gameTime)
         {
             var kstate = Keyboard.GetState();
-            if (!IsCrashed)
+            if (!IsCrashed && !TwoPlayerMode)
             {
 
                 if (kstate.IsKeyDown(Keys.Up))
@@ -77,7 +79,33 @@ namespace NEA_Project.Sprites
                     Rotation = 0f; //so rotation value doesn't go too high
                 }
             }
-                if (kstate.IsKeyDown(Keys.Space))
+            if (!IsCrashed && TwoPlayerMode)
+            {
+
+                if (kstate.IsKeyDown(Keys.W))
+                {
+                    Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Position.X += Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                }
+                if (kstate.IsKeyDown(Keys.S))
+                {
+                    Position.Y += Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Position.X -= Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+                }
+                if (kstate.IsKeyDown(Keys.A))
+                {
+                    Rotation -= RotationAngle;
+                }
+                if (kstate.IsKeyDown(Keys.D))
+                {
+                    Rotation += RotationAngle;
+                }
+                if (Rotation == -360f || Rotation == 360f)
+                {
+                    Rotation = 0f; //so rotation value doesn't go too high
+                }
+            }
+            if (kstate.IsKeyDown(Keys.Space))
                 {
                     if (IsCrashed && NumberOfLives > 0)
                     {

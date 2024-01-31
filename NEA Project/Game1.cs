@@ -14,6 +14,7 @@ namespace NEA_Project
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         Player playercar;
+        Player playercar2;
         //Texture2D map;
         //Vector2 mapposition;      
         float speed = 300f;
@@ -21,10 +22,9 @@ namespace NEA_Project
         List<Coin> coins;
         int numofpolicecars = 5;
         Levels levels;
-        int _health = 6;
-        Health health;
         int _score = 0;
         Score score;
+        private bool TwoPlayerMode;
         
         int _bank = 0;
         int _banktotal;
@@ -44,6 +44,12 @@ namespace NEA_Project
             // TODO: Add your initialization logic here
             _menu = new StartMenu(Content);
             playercar = new Player(Content, _graphics);
+            if(TwoPlayerMode == true)
+            {
+                playercar2 = new Player(Content, _graphics, true);
+                playercar2.Position = new Vector2(100, 100);
+            }
+            
             
             levels = new Levels(Content);
             
@@ -78,10 +84,13 @@ namespace NEA_Project
             _menu.LoadContent();
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             playercar.LoadContent();
+            if(TwoPlayerMode == true) 
+            {
+                playercar2.LoadContent();
+            }
        
-            score = new Score(Content.Load<SpriteFont>("font"));
-            banktotal = new Bank(0);
-
+            score = new Score(Content.Load<SpriteFont>("font"),TwoPlayerMode);
+           
             /*loading levels*/
             levels.LoadContent();
 
@@ -117,25 +126,34 @@ namespace NEA_Project
                     _menu.ShowMenu = true;
                 }
                 playercar.Update(gameTime);
+                if(TwoPlayerMode) 
+                {
+                    playercar2.Update(gameTime);
+                }
 
 
                 foreach (Policecar copcar in policecars)
                 {
                     copcar.Update(gameTime);
                     bool CarCollision = playercar.DetectCollision(copcar);
-
+                   
                     if (CarCollision == true)
                     {
                         copcar.Speed = 0f;
                         copcar.RotationAngle = 0f;
-                        _health--;
-                        if (_health == 0)
-                        {
-                            speed = 0f;
-                            //Exit();
-                        }
 
                     }
+                    if (TwoPlayerMode)
+                    {
+                        bool CarCollision2 = playercar2.DetectCollision(copcar);
+                        if (CarCollision2 == true)
+                        {
+                            copcar.Speed = 0f;
+                            copcar.RotationAngle = 0f;
+
+                        }
+                    }
+
                 }
                 foreach (Coin coin in coins)
                 {
@@ -147,16 +165,34 @@ namespace NEA_Project
                         score.SetScore(tempscore + 1);
                         levels.CurrentLevel.NumberOfCoins = levels.CurrentLevel.NumberOfCoins - 1;
                     }
+                    if(TwoPlayerMode)
+                    {
+                        bool Collision2 = coin.DetectCollision(playercar2);
+                        if (Collision2 == true)
+                        {
+                            int tempscore = score.GetScore2();
+                            score.SetScore2(tempscore + 1);
+                            levels.CurrentLevel.NumberOfCoins = levels.CurrentLevel.NumberOfCoins - 1;
+                        }
+                    }
 
                 }
                 score.Lives = playercar.NumberOfLives;
-                if(playercar.NumberOfLives == 0)
+                if(playercar.NumberOfLives == 0 && !TwoPlayerMode)
+                {
+                    GameStarted = false; _menu.ShowMenu = true;
+                }
+                if(TwoPlayerMode)
+                {
+                    score.Player2Lives = playercar2.NumberOfLives;
+                    
+                }
+                if (playercar.NumberOfLives == 0 && playercar2.NumberOfLives == 0 && TwoPlayerMode)
                 {
                     GameStarted = false; _menu.ShowMenu = true;
                 }
 
-
-                if(levels.CurrentLevel.NumberOfCoins == 0)
+                if (levels.CurrentLevel.NumberOfCoins == 0)
                 {
                     
                     var success = levels.NextLevel();
@@ -174,11 +210,20 @@ namespace NEA_Project
             }
             else
             {
-                if (_menu.Update(gameTime) == "Start")
+                if (_menu.Update(gameTime) == "Start 1 Player")
                 {
+                    TwoPlayerMode = false;
+                    Initialize();
+                    LoadContent();
                     GameStarted = true;
                 }
-
+                if (_menu.Update(gameTime) == "Start 2 Player")
+                {
+                    TwoPlayerMode = true;
+                    Initialize();
+                    LoadContent();
+                    GameStarted = true;
+                }
                 if (_menu.Update(gameTime)== "Exit")
                 {
                     Exit();
@@ -196,6 +241,11 @@ namespace NEA_Project
 
             levels.Draw(_spriteBatch);
             playercar.Draw(_spriteBatch);
+            if(TwoPlayerMode) 
+            {
+                playercar2.Draw(_spriteBatch);
+            
+            }
             score.Draw(_spriteBatch);
             foreach (Policecar copcar in policecars)
             {

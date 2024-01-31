@@ -23,8 +23,8 @@ namespace NEA_Project.Core
         public StartMenu(ContentManager content)
         {
             this.content = content; 
-            menuitems.Add("1.Create Profile");
-            menuitems.Add("S.Start Game");
+            menuitems.Add("1.Start 1 Player");
+            menuitems.Add("2.Start 2 Player");
             menuitems.Add("X.Exit");
             ShowMenu = true;
             
@@ -40,6 +40,7 @@ namespace NEA_Project.Core
                 spriteBatch.DrawString(font, $"Player 1 Controls: Up, Down, Left, Right Arrows", new Vector2(300, 600), Color.White);
                 spriteBatch.DrawString(font, $"Player 2 Controls: W - Up, S - Down, A - Left, D - Right", new Vector2(300, 700), Color.White);
                 spriteBatch.DrawString(font, $"Press M to return to Menu", new Vector2(300, 400), Color.White);
+                spriteBatch.DrawString(font, $"Press Space to reset your character", new Vector2(300, 800), Color.White);
                 int VerticalPosition = 900;
                 foreach (var item in menuitems)
                 {
@@ -53,17 +54,17 @@ namespace NEA_Project.Core
         public virtual string Update(GameTime gameTime) 
         { 
             var kstate = Keyboard.GetState();
-            if(kstate.IsKeyDown(Keys.NumPad1)) 
+            if(kstate.IsKeyDown(Keys.D1)) 
             {
                 //create profile
                 ShowMenu = false;
-                return "Start";
+                return "Start 1 Player";
 
             }
-            if(kstate.IsKeyDown(Keys.S))
+            if (kstate.IsKeyDown(Keys.D2))
             {
                 ShowMenu = false;
-                return "Start";
+                return "Start 2 Player";
             }
             if(kstate.IsKeyDown(Keys.X))
             {
