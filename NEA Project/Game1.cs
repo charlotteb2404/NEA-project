@@ -20,15 +20,13 @@ namespace NEA_Project
         float speed = 300f;
         List<Policecar> policecars;
         List<Coin> coins;
-        int numofpolicecars = 5;
         Levels levels;
         int _score = 0;
         Score score;
         private bool TwoPlayerMode;
-        
-        int _bank = 0;
-        int _banktotal;
-        Bank banktotal;
+        List<Policeman> policemen;
+        int numofpoliceofficers = 1;
+     
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -77,6 +75,13 @@ namespace NEA_Project
                 coin.LoadContent();
                 coins.Add(coin);
             }
+            policemen = new List<Policeman>();
+            for (int officers = 0; officers < levels.CurrentLevel.NumberOfPoliceOfficers; officers++)
+            {
+                Policeman policeman = new Policeman(Content, _graphics);
+                policeman.LoadContent();
+                policemen.Add(policeman);
+            }
         }
 
         protected override void LoadContent()
@@ -102,6 +107,10 @@ namespace NEA_Project
             foreach(Coin coin in coins)
             {
                 coin.LoadContent();
+            }
+            foreach(Policeman officer in policemen)
+            {
+                officer.LoadContent();
             }
 
 
@@ -155,6 +164,29 @@ namespace NEA_Project
                     }
 
                 }
+                foreach (Policeman officer in policemen)
+                {
+                    officer.Update(gameTime);
+                    bool CarCollision = playercar.DetectCollision(officer);
+
+                    if (CarCollision == true)
+                    {
+                        officer.Speed = 0f;
+                        officer.RotationAngle = 0f;
+
+                    }
+                    if (TwoPlayerMode)
+                    {
+                        bool CarCollision2 = playercar2.DetectCollision(officer);
+                        if (CarCollision2 == true)
+                        {
+                            officer.Speed = 0f;
+                            officer.RotationAngle = 0f;
+
+                        }
+                    }
+
+                }
                 foreach (Coin coin in coins)
                 {
                     coin.Update(gameTime);
@@ -163,7 +195,9 @@ namespace NEA_Project
                     {
                         int tempscore = score.GetScore();
                         score.SetScore(tempscore + 1);
+                        playercar.CurrentLevelScore += 1;
                         levels.CurrentLevel.NumberOfCoins = levels.CurrentLevel.NumberOfCoins - 1;
+
                     }
                     if(TwoPlayerMode)
                     {
@@ -172,6 +206,7 @@ namespace NEA_Project
                         {
                             int tempscore = score.GetScore2();
                             score.SetScore2(tempscore + 1);
+                            playercar2.CurrentLevelScore += 1;
                             levels.CurrentLevel.NumberOfCoins = levels.CurrentLevel.NumberOfCoins - 1;
                         }
                     }
@@ -198,7 +233,24 @@ namespace NEA_Project
                     var success = levels.NextLevel();
                     if (success)
                     {
-                        SetUpLevel();
+                        if (TwoPlayerMode)
+                        { 
+                            if(playercar.CurrentLevelScore > playercar2.CurrentLevelScore)
+                            {
+                                int tempscore = score.GetScore();
+                                score.SetScore(tempscore + 5);
+                            }
+                            else
+                            {
+                                int tempscore = score.GetScore2();
+                                score.SetScore2(tempscore + 5);
+                            }
+                            playercar.CurrentLevelScore = 0;
+                            playercar2.CurrentLevelScore = 0;
+
+                        }
+                            SetUpLevel();
+                        
                     }
                     else
                     {
@@ -254,6 +306,10 @@ namespace NEA_Project
             foreach (Coin coin in coins)
             {
                 coin.Draw(_spriteBatch);
+            }
+            foreach(Policeman officer in policemen)
+            {
+                officer.Draw(_spriteBatch); 
             }
             _menu.Draw(_spriteBatch);
             _spriteBatch.End();

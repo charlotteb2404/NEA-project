@@ -19,6 +19,7 @@ namespace NEA_Project.Core
         public int LevelNumber = 1;
         protected string mapcontent;
         ContentManager _content;
+        private int _numberOfPoliceOfficers;
         public int NumberOfCoins { get; set; }
 
         public Level(ContentManager content, DatabaseLevel data) 
@@ -29,6 +30,7 @@ namespace NEA_Project.Core
             _difficulty = data.Difficulty;
             _content = content;
             NumberOfCoins = data.NumberOfCoins;
+            _numberOfPoliceOfficers = data.NumberOfPoliceOfficers;
         
         }
 
@@ -46,6 +48,10 @@ namespace NEA_Project.Core
         public int Difficulty
         {
             get { return _difficulty; }
+        }
+        public int NumberOfPoliceOfficers
+        {
+            get { return _numberOfPoliceOfficers;  }
         }
 
      

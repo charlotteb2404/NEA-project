@@ -28,11 +28,7 @@ namespace NEA_Project.Sprites
             return collided;
             
         }
-        //public Player(Texture2D texture,Texture2D crashtexture, Vector2 startPosition) : base(texture, crashtexture)
-        //{
-        //    this.Speed = 200f;
-        //    this._startPosition = startPosition;
-        //}
+        public int CurrentLevelScore { get; set; }
         public Player(ContentManager content, GraphicsDeviceManager graphics, bool twoplayermode = false): base(content, graphics) 
         {
             Position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);

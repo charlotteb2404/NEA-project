@@ -59,6 +59,10 @@ namespace NEA_Project.Core
         {
             StayWithinScreen(_graphics);
         }
+        public virtual void Update(GameTime gameTime, Sprite sprite)
+        {
+            StayWithinScreen(_graphics);
+        }
         public Rectangle Rectangle
         {
             

@@ -18,7 +18,7 @@ namespace NEA_Project.repos
             
         }
         private IDbConnection db { get { return new SqlConnection(ConnectionString); }}
-        public List<DatabaseLevel> getall() 
+        public List<DatabaseLevel> getall()
         {
             var sql = "select * from dbo.Levels";
             return db.Query<DatabaseLevel>(sql, null, commandType: CommandType.Text).ToList();
