@@ -30,9 +30,24 @@ namespace NEA_Project.Sprites
         }
         public override void Update(GameTime gameTime, Sprite player)
         {
-            var xdif = Position.X - player.Position.X;
-            var ydif = Position.Y - player.Position.Y;
+
+            //var xdif = Position.X - player.Position.X;
+            //var ydif = Position.Y - player.Position.Y;
+            var xdif = player.Position.X - Position.X;
+            var ydif = player.Position.Y - Position.Y;
             //figure out angle 
+            var gradient = ydif/xdif;
+            Vector2 Direction = new Vector2(xdif, ydif);
+            Direction.Normalize();
+            RotationAngle = (float)Math.Atan2(ydif, xdif);
+            Position += Direction * Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+
+            //if (Position.X < player.Position.X)
+
+            //   RotationAngle = (float)Math.Tan(gradient);
+            // if for example PO is closer 
+            //need to move difference 
             //if (movesBeforeChange == 0)
             //{
             //    movesBeforeChange = 5;
@@ -56,7 +71,7 @@ namespace NEA_Project.Sprites
             //}
             //else
             //{
-               Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
                Position.X += Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
             //    movesBeforeChange -= 1;
             //}

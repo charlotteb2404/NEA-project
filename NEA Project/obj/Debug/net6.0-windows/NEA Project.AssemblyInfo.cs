@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NEA Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+357d36b380b99a3c1dad9460dd09e47cc8f9cc8e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+31a0f14e197377d7b6315a9fb8ed812b3879cd29")]
 [assembly: System.Reflection.AssemblyProductAttribute("NEA Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NEA Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
