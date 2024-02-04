@@ -124,7 +124,7 @@ namespace NEA_Project
 
             // TODO: Add your update logic here
             var kstate = Keyboard.GetState();
-
+            var x = kstate.GetPressedKeys();
 
 
             if (GameStarted)
@@ -166,7 +166,7 @@ namespace NEA_Project
                 }
                 foreach (Policeman officer in policemen)
                 {
-                    officer.Update(gameTime);
+                    officer.Update(gameTime, playercar);
                     bool CarCollision = playercar.DetectCollision(officer);
 
                     if (CarCollision == true)
@@ -220,12 +220,13 @@ namespace NEA_Project
                 if(TwoPlayerMode)
                 {
                     score.Player2Lives = playercar2.NumberOfLives;
-                    
+                    if (playercar.NumberOfLives == 0 && playercar2.NumberOfLives == 0 && TwoPlayerMode)
+                    {
+                        GameStarted = false; _menu.ShowMenu = true;
+                    }
+
                 }
-                if (playercar.NumberOfLives == 0 && playercar2.NumberOfLives == 0 && TwoPlayerMode)
-                {
-                    GameStarted = false; _menu.ShowMenu = true;
-                }
+               
 
                 if (levels.CurrentLevel.NumberOfCoins == 0)
                 {

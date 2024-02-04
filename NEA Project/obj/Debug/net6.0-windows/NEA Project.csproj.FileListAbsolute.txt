@@ -1,63 +1,33 @@
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.exe
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.deps.json
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.runtimeconfig.json
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.pdb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\MonoGame.Framework.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.Direct2D1.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.Direct3D11.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.Direct3D9.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.DXGI.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.Mathematics.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.MediaFoundation.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.XAudio2.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.XInput.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\debian-x64\native\libuv.so
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\fedora-x64\native\libuv.so
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\opensuse-x64\native\libuv.so
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\osx\native\libuv.dylib
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\rhel-x64\native\libuv.so
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win7-arm\native\libuv.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win7-x64\native\libuv.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win7-x86\native\libuv.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.csproj.AssemblyReference.cache
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.AssemblyInfoInputs.cache
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.AssemblyInfo.cs
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.csproj.CoreCompileInputs.cache
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.csproj.CopyComplete
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\refint\NEA Project.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.pdb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.genruntimeconfig.cache
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\ref\NEA Project.dll
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\map.xnb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\crash.xnb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\ScoreList.xnb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\font.xnb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\playercar.xnb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\policecar.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\ball.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\BankTotal.xnb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\map2.xnb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\coin.xnb
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\takencoin.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\building1.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\building2.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\coin.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\crash.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\font.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\map.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\map2.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl1map.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl2map.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl3map.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl4map.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\maps\lvl5map.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\playercar.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\policecar.xnb
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\policeofficer.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\ScoreList.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Content\takencoin.xnb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.exe
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.deps.json
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.runtimeconfig.json
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Azure.Core.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Azure.Identity.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Dapper.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.CodeAnalysis.VisualBasic.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
@@ -72,11 +42,29 @@ C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Scienc
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Core.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.WinForms.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\MonoGame.Framework.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.Direct2D1.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.Direct3D11.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.Direct3D9.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.DXGI.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.Mathematics.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.MediaFoundation.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.XAudio2.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\SharpDX.XInput.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\System.Memory.Data.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\debian-x64\native\libuv.so
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\fedora-x64\native\libuv.so
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\opensuse-x64\native\libuv.so
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\osx\native\libuv.dylib
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\rhel-x64\native\libuv.so
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win7-arm\native\libuv.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win7-x64\native\libuv.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win7-x86\native\libuv.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
@@ -90,4 +78,16 @@ C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Scienc
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.csproj.AssemblyReference.cache
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.AssemblyInfoInputs.cache
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.AssemblyInfo.cs
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.csproj.CoreCompileInputs.cache
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.sourcelink.json
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.csproj.CopyComplete
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\refint\NEA Project.dll
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.pdb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.genruntimeconfig.cache
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\bin\Debug\net6.0-windows\NEA Project.pdb
+C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\ref\NEA Project.dll

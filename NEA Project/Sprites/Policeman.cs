@@ -37,10 +37,21 @@ namespace NEA_Project.Sprites
             var ydif = player.Position.Y - Position.Y;
             //figure out angle 
             var gradient = ydif/xdif;
-            Vector2 Direction = new Vector2(xdif, ydif);
-            Direction.Normalize();
-            RotationAngle = (float)Math.Atan2(ydif, xdif);
-            Position += Direction * Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //if (ydif > 0)
+            //{
+            //    Vector2 Direction = new Vector2(xdif, ydif);
+            //    Direction.Normalize();
+            //    RotationAngle = (float)Math.Atan2(ydif, xdif);
+            //    Position += Direction * Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //}
+            //if (ydif < 0)
+            //{
+                Vector2 Direction = new Vector2(xdif, ydif);
+                Direction.Normalize();
+                RotationAngle = (float)Math.Atan2(ydif, xdif);
+                Position += Direction * Speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+           // }
+            //Rotation = RotationAngle;
 
 
             //if (Position.X < player.Position.X)
@@ -71,8 +82,8 @@ namespace NEA_Project.Sprites
             //}
             //else
             //{
-            Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
-               Position.X += Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            //Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
+              // Position.X += Speed * (float)(Math.Sin(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
             //    movesBeforeChange -= 1;
             //}
             base.Update(gameTime);

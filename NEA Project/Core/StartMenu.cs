@@ -16,27 +16,31 @@ namespace NEA_Project.Core
 {
     public class StartMenu
     {
+        private bool editmode = false;
         private readonly ContentManager content;
         SpriteFont font;
         List<string> menuitems = new List<string>();
+        private TimeSpan time = TimeSpan.Zero;
 
         public StartMenu(ContentManager content)
         {
             this.content = content; 
             menuitems.Add("1.Start 1 Player");
             menuitems.Add("2.Start 2 Player");
+            menuitems.Add("P.Create Profile");
             menuitems.Add("X.Exit");
             ShowMenu = true;
             
         }
         public bool ShowMenu { get; set; }
+        public string ProfileName { get; set; }
         public virtual void Draw(SpriteBatch spriteBatch) 
         {
             if (ShowMenu)
             {
 
 
-                spriteBatch.DrawString(font, $"Collect coins and try your best to avoid the police", new Vector2(300, 500), Color.White);
+                spriteBatch.DrawString(font, $"{ProfileName}Collect coins and try your best to avoid the police", new Vector2(300, 500), Color.White);
                 spriteBatch.DrawString(font, $"Player 1 Controls: Up, Down, Left, Right Arrows", new Vector2(300, 600), Color.White);
                 spriteBatch.DrawString(font, $"Player 2 Controls: W - Up, S - Down, A - Left, D - Right", new Vector2(300, 700), Color.White);
                 spriteBatch.DrawString(font, $"Press M to return to Menu", new Vector2(300, 400), Color.White);
@@ -54,23 +58,43 @@ namespace NEA_Project.Core
         public virtual string Update(GameTime gameTime) 
         { 
             var kstate = Keyboard.GetState();
-            if(kstate.IsKeyDown(Keys.D1)) 
+            if (!editmode)
             {
-                //create profile
-                ShowMenu = false;
-                return "Start 1 Player";
+                if (kstate.IsKeyDown(Keys.D1))
+                {
+                    //create profile
+                    ShowMenu = false;
+                    return "Start 1 Player";
 
+                }
+                if (kstate.IsKeyDown(Keys.D2))
+                {
+                    ShowMenu = false;
+                    return "Start 2 Player";
+                }
+                if (kstate.IsKeyDown(Keys.P))
+                {
+                    editmode = true;
+                    return "";
+                }
+                if (kstate.IsKeyDown(Keys.X))
+                {
+                    return "Exit";
+                }
             }
-            if (kstate.IsKeyDown(Keys.D2))
+            else
             {
-                ShowMenu = false;
-                return "Start 2 Player";
-            }
-            if(kstate.IsKeyDown(Keys.X))
-            {
-                return "Exit";
+                if(kstate.GetPressedKeys().Count() > 0)
+                {
+                    if (time < gameTime.TotalGameTime.Add(new TimeSpan(-5000)))
+                    {
+                        ProfileName = ProfileName + kstate.GetPressedKeys()[0];
+                        time = gameTime.TotalGameTime;
+                    }
+                }
             }
             return "";
+
         
         }
     }
