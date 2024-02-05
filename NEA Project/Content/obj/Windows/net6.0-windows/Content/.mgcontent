@@ -21,13 +21,17 @@
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/maps/lvl4map.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/maps/lvl5map.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/policeofficer.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/potion.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/ScoreList.png</File>
     <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/takencoin.png</File>
+    <File>C:/Users/S220025/OneDrive - Altus Education Partnership/Subjects/Computer Science/NEA/code/Games/NEA-project/NEA Project/Content/takenpotion.png</File>
   </SourceFiles>
   <DestFiles>
     <File>crash.png</File>
     <File>playercar.png</File>
     <File>policecar.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

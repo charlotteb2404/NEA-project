@@ -20,7 +20,7 @@ namespace NEA_Project.Core
         private readonly ContentManager content;
         SpriteFont font;
         List<string> menuitems = new List<string>();
-        private TimeSpan time = TimeSpan.Zero;
+        private DateTime time = DateTime.Now;
 
         public StartMenu(ContentManager content)
         {
@@ -33,14 +33,23 @@ namespace NEA_Project.Core
             
         }
         public bool ShowMenu { get; set; }
-        public string ProfileName { get; set; }
+        public string ProfileName { get; set; } = "";
         public virtual void Draw(SpriteBatch spriteBatch) 
         {
             if (ShowMenu)
             {
+                if(ProfileName != "" && !editmode)
+                {
+                    spriteBatch.DrawString(font, $"WELCOME {ProfileName}", new Vector2(300, 300), Color.YellowGreen);
+                }
+                if (editmode)
+                {
+                    spriteBatch.DrawString(font, $"Enter Name:  {ProfileName}", new Vector2(300, 300), Color.YellowGreen);
+                }
 
 
-                spriteBatch.DrawString(font, $"{ProfileName}Collect coins and try your best to avoid the police", new Vector2(300, 500), Color.White);
+
+                spriteBatch.DrawString(font, $"Collect coins and try your best to avoid the police", new Vector2(300, 500), Color.White);
                 spriteBatch.DrawString(font, $"Player 1 Controls: Up, Down, Left, Right Arrows", new Vector2(300, 600), Color.White);
                 spriteBatch.DrawString(font, $"Player 2 Controls: W - Up, S - Down, A - Left, D - Right", new Vector2(300, 700), Color.White);
                 spriteBatch.DrawString(font, $"Press M to return to Menu", new Vector2(300, 400), Color.White);
@@ -75,6 +84,8 @@ namespace NEA_Project.Core
                 if (kstate.IsKeyDown(Keys.P))
                 {
                     editmode = true;
+                    time = DateTime.Now;
+                    ProfileName = "";
                     return "";
                 }
                 if (kstate.IsKeyDown(Keys.X))
@@ -86,10 +97,14 @@ namespace NEA_Project.Core
             {
                 if(kstate.GetPressedKeys().Count() > 0)
                 {
-                    if (time < gameTime.TotalGameTime.Add(new TimeSpan(-5000)))
-                    {
+                    if(time < DateTime.Now.AddSeconds(-1))
+                    { 
                         ProfileName = ProfileName + kstate.GetPressedKeys()[0];
-                        time = gameTime.TotalGameTime;
+                        time = DateTime.Now;
+                        if(ProfileName.Length == 3)
+                        {
+                            editmode = false;
+                        }
                     }
                 }
             }
