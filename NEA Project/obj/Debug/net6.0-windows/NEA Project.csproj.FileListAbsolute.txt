@@ -83,7 +83,6 @@ C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Scienc
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.AssemblyInfoInputs.cache
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.AssemblyInfo.cs
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.csproj.CoreCompileInputs.cache
-C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.sourcelink.json
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.csproj.CopyComplete
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\NEA Project.dll
 C:\Users\S220025\OneDrive - Altus Education Partnership\Subjects\Computer Science\NEA\code\Games\NEA-project\NEA Project\obj\Debug\net6.0-windows\refint\NEA Project.dll

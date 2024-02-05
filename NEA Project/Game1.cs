@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using NEA_Project.Core;
 using NEA_Project.Sprites;
+using SharpDX.Direct3D9;
 using System.Collections.Generic;
 
 namespace NEA_Project
@@ -26,6 +27,7 @@ namespace NEA_Project
         private bool TwoPlayerMode;
         List<Policeman> policemen;
         int numofpoliceofficers = 1;
+        List<ExtraLifePotion> extralifePotion;
      
         public Game1()
         {
@@ -82,6 +84,13 @@ namespace NEA_Project
                 policeman.LoadContent();
                 policemen.Add(policeman);
             }
+            extralifePotion = new List<ExtraLifePotion>();
+            for(int potions = 0; potions < levels.CurrentLevel.NumberOfPotions; potions++)
+            {
+                ExtraLifePotion extralifepotion = new ExtraLifePotion(Content, _graphics);
+                extralifepotion.LoadContent();
+                extralifePotion.Add(extralifepotion);
+            }
         }
 
         protected override void LoadContent()
@@ -111,6 +120,10 @@ namespace NEA_Project
             foreach(Policeman officer in policemen)
             {
                 officer.LoadContent();
+            }
+            foreach(ExtraLifePotion potion in extralifePotion)
+            {
+                potion.LoadContent();
             }
 
 
@@ -208,6 +221,24 @@ namespace NEA_Project
                             score.SetScore2(tempscore + 1);
                             playercar2.CurrentLevelScore += 1;
                             levels.CurrentLevel.NumberOfCoins = levels.CurrentLevel.NumberOfCoins - 1;
+                        }
+                    }
+                    foreach(ExtraLifePotion extralifepotion in extralifePotion)
+                    {
+                        extralifepotion.Update(gameTime);
+                        bool PotionCollision = extralifepotion.DetectCollision(playercar);
+                        if (PotionCollision == true)
+                        {
+                            playercar.NumberOfLives += 1;
+                        }
+                        if (TwoPlayerMode)
+                        {
+                            bool PotionCollision2 = extralifepotion.DetectCollision(playercar2);
+                            if (PotionCollision2 == true)
+                            {
+                                playercar2.NumberOfLives += 1;
+                                
+                            }
                         }
                     }
 
@@ -311,6 +342,10 @@ namespace NEA_Project
             foreach(Policeman officer in policemen)
             {
                 officer.Draw(_spriteBatch); 
+            }
+            foreach(ExtraLifePotion potion in extralifePotion)
+            {
+                potion.Draw(_spriteBatch);
             }
             _menu.Draw(_spriteBatch);
             _spriteBatch.End();

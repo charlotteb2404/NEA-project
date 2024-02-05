@@ -21,6 +21,7 @@ namespace NEA_Project.Core
         ContentManager _content;
         private int _numberOfPoliceOfficers;
         public int NumberOfCoins { get; set; }
+        public int NumberOfPotions { get; set; }
 
         public Level(ContentManager content, DatabaseLevel data) 
         {
@@ -31,6 +32,7 @@ namespace NEA_Project.Core
             _content = content;
             NumberOfCoins = data.NumberOfCoins;
             _numberOfPoliceOfficers = data.NumberOfPoliceOfficers;
+            NumberOfPotions = data.NumberOfPotions;
         
         }
 
