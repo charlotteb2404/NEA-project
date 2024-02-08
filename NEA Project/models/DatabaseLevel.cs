@@ -16,5 +16,6 @@ namespace NEA_Project.models
         public int NumberOfCoins { get; set; }
         public int NumberOfPoliceOfficers { get; set; }
         public int NumberOfPotions { get; set; }
+        //getting and setting values from the database table
     }
 }

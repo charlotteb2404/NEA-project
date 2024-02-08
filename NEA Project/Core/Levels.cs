@@ -21,13 +21,12 @@ namespace NEA_Project.Core
             LevelsRepo repo = new LevelsRepo();
 
             List<DatabaseLevel> templevels = repo.getall();
-            for (int maplevels = 0; maplevels < templevels.Count; maplevels++)
+            for (int maplevels = 0; maplevels < templevels.Count; maplevels++)//explain
             {
                 Level templevel = new Level(content, templevels[maplevels]);
                 _levels.Add(templevel);
 
             }
-            //levelnum = 4;
             
         }
         public Levels(List<Level> levels)
@@ -46,6 +45,7 @@ namespace NEA_Project.Core
                levelnum = value - 1;
             }
         }
+        //progressing player through the levels
         public Level CurrentLevel
         {
             

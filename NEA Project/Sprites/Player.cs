@@ -22,7 +22,7 @@ namespace NEA_Project.Sprites
             var collided = base.DetectCollision(sprite);
             if (collided && !IsCrashed)
             {
-                NumberOfLives -= 1;
+                NumberOfLives -= 1; //removing a life after a collision
                 IsCrashed = true;
             }
             return collided;
@@ -33,7 +33,7 @@ namespace NEA_Project.Sprites
         {
             Position = new Vector2(_graphics.PreferredBackBufferWidth / 2, _graphics.PreferredBackBufferHeight / 2);
             _startPosition = Position;
-            Speed = 200f;
+            Speed = 200f; //setting values
             RotationAngle = 0.05f;
             NumberOfLives = 3;
             TwoPlayerMode = twoplayermode;
@@ -51,7 +51,7 @@ namespace NEA_Project.Sprites
             var kstate = Keyboard.GetState();
             if (!IsCrashed && !TwoPlayerMode)
             {
-
+                //player movement keys
                 if (kstate.IsKeyDown(Keys.Up))
                 {
                     Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -77,7 +77,7 @@ namespace NEA_Project.Sprites
             }
             if (!IsCrashed && TwoPlayerMode)
             {
-
+                //player2 movement keys
                 if (kstate.IsKeyDown(Keys.W))
                 {
                     Position.Y -= Speed * (float)(Math.Cos(Rotation)) * (float)gameTime.ElapsedGameTime.TotalSeconds;
@@ -111,9 +111,10 @@ namespace NEA_Project.Sprites
                         _texture = noncrash;
                         Position = _startPosition;
                         IsCrashed = false;
+                    //resetting player
                     }
                     
-                } // need to do collecting coins
+                } 
             base.Update(gameTime);
                
         }

@@ -23,13 +23,14 @@ namespace NEA_Project.Core
         public bool GameCompleted { get; set; }
         public Score(SpriteFont font, bool twoPlayerMode = false)
         {
+            //score positioning
             _font = font;
             _position = new Vector2(10, 10);
             _2playerposition = new Vector2(10, 60);
             gamecompleteposition = new Vector2(700, 800);
             TwoPlayerMode = twoPlayerMode;
         }
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch) //score text
         {
             spriteBatch.DrawString(_font, $"Player 1 score = {_score}, lives = {_lives}", _position, Color.White);
             if (TwoPlayerMode)

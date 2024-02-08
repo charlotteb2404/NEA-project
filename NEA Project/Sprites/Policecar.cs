@@ -15,7 +15,7 @@ namespace NEA_Project.Sprites
  
         public Policecar(ContentManager content, GraphicsDeviceManager graphics) : base(content, graphics)
         {
-            int randomx = random.Next(0, graphics.PreferredBackBufferWidth);
+            int randomx = random.Next(0, graphics.PreferredBackBufferWidth); //policecars are scattered randomly on the map to start
             int randomy = random.Next(0, graphics.PreferredBackBufferHeight);
             Position = new Vector2(randomx, randomy);
             _startPosition = Position;
@@ -29,6 +29,7 @@ namespace NEA_Project.Sprites
         }
         public override void Update(GameTime gameTime)
         {
+            //making police car movement so it changes direction in a rmore realistic way
             if (movesBeforeChange == 0)
             {
                 movesBeforeChange = 5;

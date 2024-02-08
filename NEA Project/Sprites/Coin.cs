@@ -23,7 +23,7 @@ namespace NEA_Project.Sprites
         }
         public override void LoadContent()
         {
-            _texture = _content.Load<Texture2D>("coin");//copy policecar
+            _texture = _content.Load<Texture2D>("coin");
             crash = _content.Load<Texture2D>("takencoin");
         }
         public override void Update(GameTime gameTime)

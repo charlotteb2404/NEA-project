@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using NEA_Project.Core;
+using NEA_Project.repos;
 using NEA_Project.Sprites;
 using SharpDX.Direct3D9;
 using System.Collections.Generic;
@@ -37,6 +38,7 @@ namespace NEA_Project
             Window.AllowUserResizing = true;
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+            //setting screen display size
         }
 
         protected override void Initialize()
@@ -49,7 +51,7 @@ namespace NEA_Project
                 playercar2 = new Player(Content, _graphics, true);
                 playercar2.Position = new Vector2(100, 100);
             }
-            
+            //loading content for players
             
             levels = new Levels(Content);
             
@@ -61,6 +63,7 @@ namespace NEA_Project
         }
         private void SetUpLevel()
         {
+            //setting up levels by adding each level's set amount of sprites 
             policecars = new List<Policecar>();
             for (int cars = 0; cars < levels.CurrentLevel.NumberOfPolice; cars++)
             {
@@ -142,7 +145,7 @@ namespace NEA_Project
 
             if (GameStarted)
             {
-                if(kstate.IsKeyDown(Keys.M))
+                if(kstate.IsKeyDown(Keys.M)) //returning to menu
                 {
                     GameStarted = false;
                     _menu.ShowMenu = true;
@@ -153,7 +156,7 @@ namespace NEA_Project
                     playercar2.Update(gameTime);
                 }
 
-
+                //detecting player collisions to certain sprites 
                 foreach (Policecar copcar in policecars)
                 {
                     copcar.Update(gameTime);
@@ -162,10 +165,10 @@ namespace NEA_Project
                     if (CarCollision == true)
                     {
                         copcar.Speed = 0f;
-                        copcar.RotationAngle = 0f;
+                        copcar.RotationAngle = 0f; //player and cop car collision stops cop car movement 
 
                     }
-                    if (TwoPlayerMode)
+                    if (TwoPlayerMode)//setting same for two player mode
                     {
                         bool CarCollision2 = playercar2.DetectCollision(copcar);
                         if (CarCollision2 == true)
@@ -208,7 +211,7 @@ namespace NEA_Project
                     {
                         int tempscore = score.GetScore();
                         score.SetScore(tempscore + 1);
-                        playercar.CurrentLevelScore += 1;
+                        playercar.CurrentLevelScore += 1; //collecting a coin adds one to the score
                         levels.CurrentLevel.NumberOfCoins = levels.CurrentLevel.NumberOfCoins - 1;
 
                     }
@@ -229,7 +232,7 @@ namespace NEA_Project
                         bool PotionCollision = extralifepotion.DetectCollision(playercar);
                         if (PotionCollision == true)
                         {
-                            playercar.NumberOfLives += 1;
+                            playercar.NumberOfLives += 1; //extra life potion adds one to life
                         }
                         if (TwoPlayerMode)
                         {
@@ -246,6 +249,8 @@ namespace NEA_Project
                 score.Lives = playercar.NumberOfLives;
                 if(playercar.NumberOfLives == 0 && !TwoPlayerMode)
                 {
+                    ProfileRepo profileRepo = new ProfileRepo();
+                    profileRepo.Update(score.GetScore(), _menu.GetProfileName()); //this is storing data for the highscore table
                     GameStarted = false; _menu.ShowMenu = true;
                 }
                 if(TwoPlayerMode)
@@ -260,14 +265,15 @@ namespace NEA_Project
                
 
                 if (levels.CurrentLevel.NumberOfCoins == 0)
-                {
+                { 
                     
                     var success = levels.NextLevel();
                     if (success)
                     {
                         if (TwoPlayerMode)
-                        { 
-                            if(playercar.CurrentLevelScore > playercar2.CurrentLevelScore)
+                        {
+                            //when all coins collected in two player mode whichever player collected more coins gets 5 bonus points
+                            if (playercar.CurrentLevelScore > playercar2.CurrentLevelScore)
                             {
                                 int tempscore = score.GetScore();
                                 score.SetScore(tempscore + 5);
@@ -294,6 +300,7 @@ namespace NEA_Project
             }
             else
             {
+                //menu options starting or ending the game
                 if (_menu.Update(gameTime) == "Start 1 Player")
                 {
                     TwoPlayerMode = false;

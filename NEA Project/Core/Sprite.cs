@@ -17,8 +17,6 @@ namespace NEA_Project.Core
         protected Texture2D noncrash;
         protected Texture2D crash;
         protected Texture2D playercar;
-        //protected Texture2D _coin;
-        //protected Texture2D _takencoin;
         public Vector2 Position;
         public float Speed = 50f;
         public float Rotation;
@@ -100,7 +98,7 @@ namespace NEA_Project.Core
                         Speed = 0f;
                         _texture = crash;
                         return true;
-                        //Position = _startPosition;
+                        //creating an area around a sprite that if another sprite enters it is a collision
 
 
                     }

@@ -25,6 +25,7 @@ namespace NEA_Project.Core
 
         public Level(ContentManager content, DatabaseLevel data) 
         {
+            //getting data on amounts of sprites from database
             _position = new Vector2(0, 0);
             mapcontent = data.MapSource;
             _numberOfPolice = data.NumberOfPolice;
