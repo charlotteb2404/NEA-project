@@ -29,6 +29,8 @@ namespace NEA_Project
         List<Policeman> policemen;
         int numofpoliceofficers = 1;
         List<ExtraLifePotion> extralifePotion;
+        private string playercar_profilename;
+        private string playercar2_profilename;
      
         public Game1()
         {
@@ -46,10 +48,12 @@ namespace NEA_Project
             // TODO: Add your initialization logic here
             _menu = new StartMenu(Content);
             playercar = new Player(Content, _graphics);
+            playercar.ProfileName = playercar_profilename;
             if(TwoPlayerMode == true)
             {
                 playercar2 = new Player(Content, _graphics, true);
                 playercar2.Position = new Vector2(100, 100);
+                playercar2.ProfileName = playercar2_profilename;
             }
             //loading content for players
             
@@ -250,7 +254,7 @@ namespace NEA_Project
                 if(playercar.NumberOfLives == 0 && !TwoPlayerMode)
                 {
                     ProfileRepo profileRepo = new ProfileRepo();
-                    profileRepo.Update(score.GetScore(), _menu.GetProfileName()); //this is storing data for the highscore table
+                    profileRepo.Update(score.GetScore(), playercar.ProfileName); //this is storing data for the highscore table
                     GameStarted = false; _menu.ShowMenu = true;
                 }
                 if(TwoPlayerMode)
@@ -301,23 +305,35 @@ namespace NEA_Project
             else
             {
                 //menu options starting or ending the game
-                if (_menu.Update(gameTime) == "Start 1 Player")
+                var menuvalue = _menu.Update(gameTime);
+                if (menuvalue != "")
                 {
-                    TwoPlayerMode = false;
-                    Initialize();
-                    LoadContent();
-                    GameStarted = true;
-                }
-                if (_menu.Update(gameTime) == "Start 2 Player")
-                {
-                    TwoPlayerMode = true;
-                    Initialize();
-                    LoadContent();
-                    GameStarted = true;
-                }
-                if (_menu.Update(gameTime)== "Exit")
-                {
-                    Exit();
+
+
+                    if (menuvalue.Contains("pname:"))
+                    {
+                        playercar_profilename = menuvalue.Replace("pname:", "");
+                    }
+                    if (menuvalue == "Start 1 Player")
+                    {
+                        TwoPlayerMode = false;
+                        Initialize();
+                        LoadContent();
+                        GameStarted = true;
+                        _menu.ShowMenu = false; 
+                    }
+                    if (menuvalue == "Start 2 Player")
+                    {
+                        TwoPlayerMode = true;
+                        Initialize();
+                        LoadContent();
+                        GameStarted = true;
+                        _menu.ShowMenu = false;
+                    }
+                    if (menuvalue == "Exit")
+                    {
+                        Exit();
+                    }
                 }
             }
         }

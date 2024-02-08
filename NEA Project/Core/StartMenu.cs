@@ -150,8 +150,11 @@ namespace NEA_Project.Core
                             {
                                 profileRepo.Create(ProfileName);
                                 _profilename = ProfileName;
+                                
+                                
                             }
                             editmode = false;
+                            return "pname:" + ProfileName;
                         }
                     }
                 }
@@ -172,6 +175,8 @@ namespace NEA_Project.Core
                             {
                                 ProfileName = profile.ProfileName;
                                 _profilename = ProfileName;
+                                loadmode = false;
+                                return "pname:" + ProfileName;
                             }
                             else
                             { 
